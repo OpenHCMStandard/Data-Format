@@ -1,0 +1,175 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item ClassNotation in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'classnotation');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ClassNotation</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-sdt_xsd.html">hcm-sdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MinOccurs</b></td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>MaxOccurs</b></td>
+               <td>(1)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="218,399,454,424" href="additionalnotations.html" alt="Drilldown into additionalNotations"></area>
+                     <area shape="rect" coords="218,300,512,391" href="servicefactor.html" alt="Drilldown into serviceFactor"></area>
+                     <area shape="rect" coords="218,218,519,293" href="servicearea.html" alt="Drilldown into serviceArea"></area>
+                     <area shape="rect" coords="218,145,523,210" href="iceclass.html" alt="Drilldown into iceClass"></area>
+                     <area shape="rect" coords="218,73,501,138" href="machinery.html" alt="Drilldown into machinery"></area>
+                     <area shape="rect" coords="218,1,521,66" href="hull.html" alt="Drilldown into hull"></area></map><img src="images/classnotation.png" border="0" alt="XSD Diagram of ClassNotation" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="ClassNotation" minOccurs="0"&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:attribute name="hull" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation source="ISO-10303-218/Section_4.2.35.5" xml:lang="en"&gt;The notation given to the hull of the ship by the classification society as a result of its approval
+								activities done on the hull.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="machinery" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation source="ISO-10303-218/Section_4.2.35.6" xml:lang="en"&gt;The notation given to the machinery on the ship by the classification society as a result of its approval
+								activities done on the machinery.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="iceClass" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation source="ISO-10303-218/Section_4.2.35.8" xml:lang="en"&gt;The type of class notation given to the ship indicating the ice conditions in which the ship has been
+								approved to operate.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="serviceArea" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation source="ISO-10303-218/Section_4.2.35.9" xml:lang="en"&gt;
+                    &lt;p&gt;The area or route in which the ship operates.&lt;/p&gt;
+                    &lt;p&gt;
+                        &lt;b&gt;NOTE:&lt;/b&gt;This may include information about waterway, wave, weather and wind conditions.&lt;/p&gt;
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="serviceFactor"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation source="ISO-10303-218/Section_4.2.35.10" xml:lang="en"&gt;The service area of the ship and the waves that occur in that area. The service factor should be in the
+								range of 0.5 to 1.0.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+            &lt;xs:simpleType&gt;
+                &lt;xs:restriction base="xs:double"&gt;
+                    &lt;xs:minInclusive value="0.5" /&gt;
+                    &lt;xs:maxInclusive value="1.0" /&gt;
+                &lt;/xs:restriction&gt;
+            &lt;/xs:simpleType&gt;
+        &lt;/xs:attribute&gt;
+        &lt;xs:attribute name="additionalNotations" type="classNotations" /&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">hull</td>
+                        <td><a href="hull.html">hull</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">machinery</td>
+                        <td><a href="machinery.html">machinery</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">iceClass</td>
+                        <td><a href="iceclass.html">iceClass</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">serviceArea</td>
+                        <td><a href="servicearea.html">serviceArea</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">serviceFactor</td>
+                        <td><a href="servicefactor.html">serviceFactor</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">additionalNotations</td>
+                        <td><a href="additionalnotations.html">additionalNotations</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

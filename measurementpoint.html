@@ -1,0 +1,268 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item MeasurementPoint in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'measurementpoint');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>MeasurementPoint</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-core_xsd.html">hcm-core.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Contains the information about the individual measurement points. It contains an optional element
+Coordinatesof type
+CartesianPointthat contains the corresponding three coordinates of the point with respect to the global ship coordinate system. The Element
+Coordinateis optional because the geometry data of the vessel may or may not be available.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="320,721,624,831" href="sessionid.html" alt="Drilldown into sessionId"></area>
+                     <area shape="rect" coords="320,638,619,713" href="framenumber1.html" alt="Drilldown into frameNumber"></area>
+                     <area shape="rect" coords="320,483,607,631" href="position1.html" alt="Drilldown into position"></area>
+                     <area shape="rect" coords="320,416,565,476" href="value.html" alt="Drilldown into value"></area>
+                     <area shape="rect" coords="320,266,619,408" href="part.html" alt="Drilldown into part"></area>
+                     <area shape="rect" coords="320,189,618,259" href="refid.html" alt="Drilldown into refId"></area>
+                     <area shape="rect" coords="320,157,466,182" href="comment.html" alt="Drilldown into comment"></area>
+                     <area shape="rect" coords="320,84,625,149" href="description.html" alt="Drilldown into description"></area>
+                     <area shape="rect" coords="320,52,462,77" href="name2.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="320,1,462,45" href="id2.html" alt="Drilldown into id"></area></map><img src="images/measurementpoint.png" border="0" alt="XSD Diagram of MeasurementPoint" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="MeasurementPoint"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Contains the information about the individual measurement points. It contains an optional element
+				&lt;code&gt;Coordinates&lt;/code&gt;of type
+				&lt;code&gt;CartesianPoint&lt;/code&gt;that contains the corresponding three coordinates of the point with respect to the global ship coordinate system. The Element
+				&lt;code&gt;Coordinate&lt;/code&gt;is optional because the geometry data of the vessel may or may not be available.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:sequence&gt;
+        &lt;xs:element name="Coordinates" type="CartesianPoint" minOccurs="0" /&gt;
+    &lt;/xs:sequence&gt;
+    &lt;xs:attribute name="id" type="globalId" use="required" /&gt;
+    &lt;xs:attribute name="name" type="xs:string" /&gt;
+    &lt;xs:attribute name="description" type="xs:string"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;A textual description of the measurement point which makes it possible to add additional information concerning the measurement point (e.g. average value).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="comment" type="xs:string" /&gt;
+    &lt;xs:attribute name="refId" type="globalId" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;A pointer to either a plate or profile at which the measurement has been taken.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="part" type="stiffenerDetail"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;For a measurement point on a stiffener this attribute defines the position of the point on the stiffener (“
+					&lt;code&gt;web&lt;/code&gt;” or “
+					&lt;code&gt;flange&lt;/code&gt;”). It is defined as an enumeration of type
+					&lt;code&gt;xs:string&lt;/code&gt;having following values:
+					&lt;code&gt;web&lt;/code&gt;,
+					&lt;code&gt;flange&lt;/code&gt;.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="value" type="positiveValue"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The value of the measured thickness expressed in meters.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="position" type="positionType"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The position of the reading, in case there is no geometry information.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="frameNumber" type="xs:string"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The longitudinal position of the measurement point by means of a frame number. It only applies if no geometry information is available (i.e. the child-element
+					&lt;code&gt;Coordinates&lt;/code&gt;)&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="sessionId" type="globalId"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Unique reference to the measurement session where the measurement was taken. Useful for auditing purposes. Each measurement point with value shall be linked to exactly one session. Shall be empty if value is not set. If there is exactly one session, the measurement point is associated implicitly to that session. Otherwise the session id must be specified explicitly.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Coordinates</td>
+                        <td><a href="coordinates.html">Coordinates</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">id</td>
+                        <td><a href="id2.html">id</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">name</td>
+                        <td><a href="name2.html">name</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">description</td>
+                        <td><a href="description.html">description</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">comment</td>
+                        <td><a href="comment.html">comment</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">refId</td>
+                        <td><a href="refid.html">refId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">part</td>
+                        <td><a href="part.html">part</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">value</td>
+                        <td><a href="value.html">value</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">position</td>
+                        <td><a href="position1.html">position</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">frameNumber</td>
+                        <td><a href="framenumber1.html">frameNumber</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">sessionId</td>
+                        <td><a href="sessionid.html">sessionId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>MeasurementPoint</i></b></li>
+                     <ul>
+                        <li><a href="gauging.html">Gauging</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="gauging.html">Gauging</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

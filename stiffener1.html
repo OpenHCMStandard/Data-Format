@@ -1,0 +1,325 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Stiffener in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'stiffener1');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Stiffener</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="stiffenergeometry.html">StiffenerGeometry</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-core_xsd.html">hcm-core.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A Stiffener is a structural part that is made from profile shaped stock
+material manufactured at a mill.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="349,1371,491,1396" href="name.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="349,1320,491,1364" href="id.html" alt="Drilldown into id"></area>
+                     <area shape="rect" coords="309,1196,613,1261" href="installationdate1.html" alt="Drilldown into installationDate"></area>
+                     <area shape="rect" coords="309,1129,458,1188" href="materialid1.html" alt="Drilldown into materialId"></area>
+                     <area shape="rect" coords="309,1055,474,1121" href="side3.html" alt="Drilldown into side"></area>
+                     <area shape="rect" coords="309,993,608,1048" href="offset.html" alt="Drilldown into offset"></area>
+                     <area shape="rect" coords="309,930,522,985" href="orientation.html" alt="Drilldown into orientation"></area>
+                     <area shape="rect" coords="309,878,459,922" href="memberid2.html" alt="Drilldown into memberId"></area>
+                     <area shape="rect" coords="329,800,597,860" href="radius.html" alt="Drilldown into radius"></area>
+                     <area shape="rect" coords="349,715,648,780" href="coatingrenewal.html" alt="Drilldown into coatingRenewal"></area>
+                     <area shape="rect" coords="349,623,650,708" href="steelrenewal.html" alt="Drilldown into steelRenewal"></area>
+                     <area shape="rect" coords="349,525,642,615" href="maxdiminution.html" alt="Drilldown into maxDiminution"></area>
+                     <area shape="rect" coords="349,397,655,517" href="builtthickness.html" alt="Drilldown into builtThickness"></area>
+                     <area shape="rect" coords="349,320,593,390" href="replacementthickness.html" alt="Drilldown into replacementThickness"></area>
+                     <area shape="rect" coords="349,233,648,313" href="thickness.html" alt="Drilldown into thickness"></area>
+                     <area shape="rect" coords="329,78,496,199" href="type.html" alt="Drilldown into type"></area>
+                     <area shape="rect" coords="329,27,498,71" href="height.html" alt="Drilldown into height"></area></map><img src="images/stiffener1.png" border="0" alt="XSD Diagram of Stiffener" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Stiffener"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation source="GL Rules I-Part 1, section 3 H, chapter 3, page 3-12, edition 2008" xml:lang="en"&gt;A Stiffener is a structural part that is made from profile shaped stock
+				material manufactured at a mill.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+        &lt;xs:extension base="StiffenerGeometry"&gt;
+            &lt;xs:sequence&gt;
+                &lt;xs:element name="Flange" type="Flange" minOccurs="0" maxOccurs="2"&gt;
+                    &lt;xs:annotation&gt;
+                        &lt;xs:documentation&gt;The number of flanges must be consistent with profile type.
+								&lt;UL&gt;&lt;LI&gt;No flange for profiles of type FB, HP, or O.&lt;/LI&gt;
+                                &lt;LI&gt;One flange for profiles of type L, T, or RHS.&lt;/LI&gt;
+                                &lt;LI&gt;Two flanges for profiles of type I or C.&lt;/LI&gt;
+                            &lt;/UL&gt;
+								Furthermore, in case of two flanges, their position shall be different.
+							&lt;/xs:documentation&gt;
+                    &lt;/xs:annotation&gt;
+                &lt;/xs:element&gt;
+            &lt;/xs:sequence&gt;
+            &lt;xs:attributeGroup ref="profileParameters" /&gt;
+            &lt;xs:attribute name="memberId" type="globalId" use="required" /&gt;
+            &lt;xs:attribute name="orientation" type="stiffenerOrientation" /&gt;
+            &lt;xs:attribute name="offset" type="xs:double"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;Denotes the distance between the insertion point of the stiffener and the trace line (in meters).&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="side" type="locationType" /&gt;
+            &lt;xs:attribute name="materialId" type="globalId"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;reference to material properties&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="installationDate" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation xml:lang="en"&gt;Date when the repair is being completed including welding and coating (if applicable), not the manufacturing date of the stiffener. Defaults to date
+							of build of the vessel if not set.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+        &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">TraceLine</td>
+                        <td><a href="traceline.html">TraceLine</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ExpandedTraceLine</td>
+                        <td><a href="expandedtraceline.html">ExpandedTraceLine</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Orientations</td>
+                        <td><a href="orientations.html">Orientations</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Flange</td>
+                        <td><a href="flange1.html">Flange</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">2</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">id</td>
+                        <td><a href="id.html">id</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">name</td>
+                        <td><a href="name.html">name</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">height</td>
+                        <td><a href="height.html">height</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">type</td>
+                        <td><a href="type.html">type</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">thickness</td>
+                        <td><a href="thickness.html">thickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">replacementThickness</td>
+                        <td><a href="replacementthickness.html">replacementThickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">builtThickness</td>
+                        <td><a href="builtthickness.html">builtThickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">maxDiminution</td>
+                        <td><a href="maxdiminution.html">maxDiminution</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">steelRenewal</td>
+                        <td><a href="steelrenewal.html">steelRenewal</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">coatingRenewal</td>
+                        <td><a href="coatingrenewal.html">coatingRenewal</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">radius</td>
+                        <td><a href="radius.html">radius</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">memberId</td>
+                        <td><a href="memberid2.html">memberId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">orientation</td>
+                        <td><a href="orientation.html">orientation</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">offset</td>
+                        <td><a href="offset.html">offset</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">side</td>
+                        <td><a href="side3.html">side</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">materialId</td>
+                        <td><a href="materialid1.html">materialId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">installationDate</td>
+                        <td><a href="installationdate1.html">installationDate</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="hullconditionobject.html">HullConditionObject</a><ul><li><a href="stiffenergeometry.html">StiffenerGeometry</a><ul>
+                     <li><b><i>Stiffener</i></b></li>
+                     <ul>
+                        <li><a href="stiffener.html">Stiffener</a></li>
+                     </ul></ul></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="stiffener.html">Stiffener</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

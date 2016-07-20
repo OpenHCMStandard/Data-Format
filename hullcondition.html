@@ -1,0 +1,204 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item HullCondition in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Element', 'hullcondition');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Element</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>HullCondition</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-model_xsd.html">hcm-model.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>An object describing the ship, its geometry and results of a measurement campaign.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="329,33,631,108" href="generator.html" alt="Drilldown into generator"></area>
+                     <area shape="rect" coords="329,1,508,26" href="schemaversion.html" alt="Drilldown into schemaVersion"></area></map><img src="images/hullcondition.png" border="0" alt="XSD Diagram of HullCondition" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:element name="HullCondition"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;An object describing the ship, its geometry and results of a measurement campaign.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+            &lt;xs:element name="ShipData" type="ShipData" minOccurs="0" /&gt;
+            &lt;xs:element name="HullStructure" type="ShipStructure" minOccurs="0" /&gt;
+            &lt;xs:element name="ThicknessMeasurementCampaign" minOccurs="0"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation xml:lang="en"&gt;A measurement campaign defines the overall scope of thickness measurements of the hull structure required in preparation of a CAP survey or a class survey. In particular, IACS URZ10 requires that "In any kind of survey, i.e. special, intermediate, annual or other surveys having the scope of the foregoing ones, thickness measurements of structures in areas where close-up surveys are required shall be carried out simultaneously with close-up surveys." Typically the results of a measurement campaign are reported to ship owner and classification society, who use them for the purpose of strength assessments as well as for repair planning.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+                &lt;xs:complexType&gt;
+                    &lt;xs:sequence&gt;
+                        &lt;xs:element name="ClassSurvey" type="Survey" minOccurs="0" /&gt;
+                        &lt;xs:element name="ThicknessMeasurements" type="Gaugings" minOccurs="0" /&gt;
+                        &lt;xs:element name="MeasurementGroups" type="MeasurementGroupType" minOccurs="0"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation xml:lang="en"&gt;Measurement groups is a collection of all measurement tasks within a measurement campaign or measurement session.&lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                        &lt;xs:element name="MeasurementSession" type="MeasurementSession" minOccurs="0" maxOccurs="unbounded" /&gt;
+                        &lt;xs:element name="Attachments" type="DocumentReferences" minOccurs="0"&gt;
+                            &lt;xs:annotation&gt;
+                                &lt;xs:documentation xml:lang="en"&gt;Documents, drawings, photos describing the general state of the vessel, e.g. upon delivery. This includes general drawings such as general arrangement or tank plan. Typical formats are .jpg,
+										.tiff, .bmp, .png, .pdf. The following types of attachments may be included in this model:
+										&lt;UL&gt;&lt;li&gt;photos documenting failures per compartment, often recorded with position, typical format is .jpg&lt;/li&gt;
+                                        &lt;li&gt;sketches taken during measurements in order to document the position of individual measurement points, typical format (.jpg,.tiff,.bmp,.png,.pdf)&lt;/li&gt;
+                                        &lt;li&gt;recorded gauging files, typical format (.utm) =&amp;gt; MeasurementSession&lt;/li&gt;
+                                        &lt;li&gt;personal or company certificates, typical format (.jpg,.tiff,.bmp,.png,.pdf)&lt;/li&gt;
+                                    &lt;/UL&gt;
+                                &lt;/xs:documentation&gt;
+                            &lt;/xs:annotation&gt;
+                        &lt;/xs:element&gt;
+                    &lt;/xs:sequence&gt;
+                    &lt;xs:attribute name="reportCreated" type="xs:date" /&gt;
+                    &lt;xs:attribute name="reportNumber" type="xs:string" /&gt;
+                    &lt;xs:attribute name="id" type="globalId" use="required" /&gt;
+                    &lt;xs:attribute name="status" type="statusType" use="required" /&gt;
+                    &lt;xs:attribute name="comment" type="xs:string" /&gt;
+                &lt;/xs:complexType&gt;
+            &lt;/xs:element&gt;
+            &lt;xs:element name="Extensions" type="HullConditionExtensions" minOccurs="0" /&gt;
+            &lt;xs:element name="Documents" type="DocumentList" minOccurs="0" /&gt;
+        &lt;/xs:sequence&gt;
+        &lt;xs:attribute name="schemaVersion" type="xs:string" use="required" /&gt;
+        &lt;xs:attribute name="generator" type="xs:string"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation xml:lang="en"&gt;The source from which the data set originates. This could be a system or dedicated interface. The data could also created manually. Include a version number if available. Example:
+						&lt;code&gt;POSEIDON, v1.50&lt;/code&gt;
+                &lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:attribute&gt;
+    &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ShipData</td>
+                        <td><a href="shipdata.html">ShipData</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">HullStructure</td>
+                        <td><a href="hullstructure.html">HullStructure</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ThicknessMeasurementCampaign</td>
+                        <td><a href="thicknessmeasurementcampaign.html">ThicknessMeasurementCampaign</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Extensions</td>
+                        <td><a href="extensions.html">Extensions</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Documents</td>
+                        <td><a href="documents.html">Documents</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">schemaVersion</td>
+                        <td><a href="schemaversion.html">schemaVersion</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">generator</td>
+                        <td><a href="generator.html">generator</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item globalId in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'globalid');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>globalId</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-pdt_xsd.html">hcm-pdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A global identifier is unique within the file, not necessarily across files. It is composed of upper case and lower case letters as well as numbers. It shall not contain any whitespace.
+    Different parts may be separated by colon.
+It is based on the XML Schema simple type
+    xs:token.
+
+    Remark:The reason why the XML Schema type
+    xs:IDis not used for this purpose is that
+    xs:IDis bound to many restrictions with respect to the characters that are allowed to be used. Using
+    xs:tokenas basic type allows for more flexibility with respect to the use of Unicode characters and white spaces.
+The uniqueness property of an attribute or element of type
+    globalIdcan be achieved by means of so called identity constraints, which is a feature of the XML Schema specification.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/globalid.png" border="0" alt="XSD Diagram of globalId" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="globalId"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="EN"&gt;
+            &lt;p&gt;A global identifier is unique within the file, not necessarily across files. It is composed of upper case and lower case letters as well as numbers. It shall not contain any whitespace.
+					Different parts may be separated by colon.&lt;/p&gt;
+            &lt;p&gt;It is based on the XML Schema simple type
+					&lt;code&gt;xs:token&lt;/code&gt;.&lt;/p&gt;
+            &lt;p&gt;
+                &lt;b&gt;Remark:&lt;/b&gt;The reason why the XML Schema type
+					&lt;code&gt;xs:ID&lt;/code&gt;is not used for this purpose is that
+					&lt;code&gt;xs:ID&lt;/code&gt;is bound to many restrictions with respect to the characters that are allowed to be used. Using
+					&lt;code&gt;xs:token&lt;/code&gt;as basic type allows for more flexibility with respect to the use of Unicode characters and white spaces.&lt;/p&gt;
+            &lt;p&gt;The uniqueness property of an attribute or element of type
+					&lt;code&gt;globalId&lt;/code&gt;can be achieved by means of so called identity constraints, which is a feature of the XML Schema specification.&lt;/p&gt;
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="xs:token"&gt;
+        &lt;xs:pattern value="[0-9a-zA-Z_\-:.@]+" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>[0-9a-zA-Z_\-:.@]+</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>globalId</i></b></li>
+                     <ul>
+                        <li><a href="compartmentid.html">compartmentId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id1.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="gaugingid.html">gaugingId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id2.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="refid.html">refId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="sessionid.html">sessionId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id3.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id4.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="memberid.html">MemberId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="materialid.html">materialId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="memberid1.html">memberId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="refid1.html">refId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="materialid1.html">materialId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="memberid2.html">memberId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="refid2.html">refId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id5.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="refid3.html">refId</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="id6.html">id</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="idlist.html">IdList</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="compartmentid.html">compartmentId</a>, <a href="gaugingid.html">gaugingId</a>, <a href="id.html">id</a>, <a href="id1.html">id</a>, <a href="id2.html">id</a>, <a href="id3.html">id</a>, <a href="id4.html">id</a>, <a href="id5.html">id</a>, <a href="id6.html">id</a>, <a href="idlist.html">IdList</a><a href="materialid.html">materialId</a>, <a href="materialid1.html">materialId</a>, <a href="memberid.html">MemberId</a>, <a href="memberid1.html">memberId</a>, <a href="memberid2.html">memberId</a>, <a href="refid.html">refId</a>, <a href="refid1.html">refId</a>, <a href="refid2.html">refId</a>, <a href="refid3.html">refId</a>, <a href="sessionid.html">sessionId</a>, 
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item FunctionalProperty in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'functionalproperty');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>FunctionalProperty</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-sdt_xsd.html">hcm-sdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>an enumeration of type xs:string which represents the denomination of the functional property or role of an structural member of the ship. The values are based on STEP Application
+Protocol 218 (see ISO 10303-218, section 4.2.237.2).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/functionalproperty.png" border="0" alt="XSD Diagram of FunctionalProperty" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="FunctionalProperty"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;an enumeration of type xs:string which represents the denomination of the functional property or role of an structural member of the ship. The values are based on STEP Application
+				Protocol 218 (see ISO 10303-218, section 4.2.237.2).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:enumeration value="ACCOMODATION_DECK" /&gt;
+        &lt;xs:enumeration value="BILGE" /&gt;
+        &lt;xs:enumeration value="BOTTOM_SHELL" /&gt;
+        &lt;xs:enumeration value="BRACKET" /&gt;
+        &lt;xs:enumeration value="BRACING"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Tubular structure used in offshore platforms connecting columns, pontoons and main deck.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="BULKHEAD" /&gt;
+        &lt;xs:enumeration value="CHAIN_LOCKER" /&gt;
+        &lt;xs:enumeration value="COLLISION_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="COLUMN"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Structure used in offshore platforms that links the main deck to the pontoons. It usually has a large diameter. Its shape can be squared or cylindrical, sometime slanted.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="CROSS_TIE" /&gt;
+        &lt;xs:enumeration value="DECK" /&gt;
+        &lt;xs:enumeration value="DECK_BEAM" /&gt;
+        &lt;xs:enumeration value="DECK_HOUSE" /&gt;
+        &lt;xs:enumeration value="DECK_IN_SUPERSTRUCTURE" /&gt;
+        &lt;xs:enumeration value="DUCT_KEEL" /&gt;
+        &lt;xs:enumeration value="ENGINE_FOUNDATION" /&gt;
+        &lt;xs:enumeration value="FLOOR" /&gt;
+        &lt;xs:enumeration value="FORECASTLE_DECK" /&gt;
+        &lt;xs:enumeration value="FRAME" /&gt;
+        &lt;xs:enumeration value="GIRDER" /&gt;
+        &lt;xs:enumeration value="HATCH_COVER" /&gt;
+        &lt;xs:enumeration value="HATCHWAY_COAMING" /&gt;
+        &lt;xs:enumeration value="HATCHWAY_ENDCOAMING" /&gt;
+        &lt;xs:enumeration value="HATCHWAY_SIDECOAMING" /&gt;
+        &lt;xs:enumeration value="HOPPER_PLATE" /&gt;
+        &lt;xs:enumeration value="HOPPER_LONGITUDINAL_PANEL" /&gt;
+        &lt;xs:enumeration value="HOPPER_TRANSVERSE_WEB_FRAME" /&gt;
+        &lt;xs:enumeration value="INNER_BOTTOM" /&gt;
+        &lt;xs:enumeration value="INNER_SHELL" /&gt;
+        &lt;xs:enumeration value="KEEL" /&gt;
+        &lt;xs:enumeration value="LONGITUDINAL_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="LONGITUDINAL_PLATE" /&gt;
+        &lt;xs:enumeration value="LONGITUDINAL_GIRDER" /&gt;
+        &lt;xs:enumeration value="LOWER_BOOM" /&gt;
+        &lt;xs:enumeration value="MACHINERY_CASING" /&gt;
+        &lt;xs:enumeration value="MAIN_DECK" /&gt;
+        &lt;xs:enumeration value="NAVIGATION_DECK" /&gt;
+        &lt;xs:enumeration value="OUTER_SHELL" /&gt;
+        &lt;xs:enumeration value="PLATFORM_DECK" /&gt;
+        &lt;xs:enumeration value="PONTOON"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Floating structure used in offshore platforms, usually ship-shaped and connected to the columns.&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="POOP_DECK" /&gt;
+        &lt;xs:enumeration value="SHEER_STRAKE" /&gt;
+        &lt;xs:enumeration value="SIDE_SHELL" /&gt;
+        &lt;xs:enumeration value="STOOL" /&gt;
+        &lt;xs:enumeration value="STRENGTH_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="STRENGTH_DECK" /&gt;
+        &lt;xs:enumeration value="STRINGER" /&gt;
+        &lt;xs:enumeration value="SUPERSTRUCTURE" /&gt;
+        &lt;xs:enumeration value="SUPERSTRUCTURE_AFT_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="SUPERSTRUCTURE_FRONT_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="SUPERSTRUCTURE_SIDE_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="TANK_BOTTOM" /&gt;
+        &lt;xs:enumeration value="TANK_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="TANK_SIDE" /&gt;
+        &lt;xs:enumeration value="TANK_TOP" /&gt;
+        &lt;xs:enumeration value="TOPSIDE_STRUCTURE"&gt;
+            &lt;xs:annotation&gt;
+                &lt;xs:documentation&gt;Structure used in offshore platforms located ontop the columns. It includes, e.g. main deck, derrick structure, helideck, living quarters, etc..&lt;/xs:documentation&gt;
+            &lt;/xs:annotation&gt;
+        &lt;/xs:enumeration&gt;
+        &lt;xs:enumeration value="TRANSOM" /&gt;
+        &lt;xs:enumeration value="TRANSVERSAL_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="TRANSVERSE_PLATE" /&gt;
+        &lt;xs:enumeration value="TRANSVERSE_WEB_FRAME" /&gt;
+        &lt;xs:enumeration value="UPPER_BOOM" /&gt;
+        &lt;xs:enumeration value="USER_DEFINED" /&gt;
+        &lt;xs:enumeration value="WALL" /&gt;
+        &lt;xs:enumeration value="WASH_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="WEATHER_DECK" /&gt;
+        &lt;xs:enumeration value="WEB_FRAME" /&gt;
+        &lt;xs:enumeration value="WING_BULKHEAD" /&gt;
+        &lt;xs:enumeration value="WING_LONGITUDINAL_PANEL" /&gt;
+        &lt;xs:enumeration value="WING_TRANSVERSE_WEB_FRAME" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ACCOMODATION_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>BILGE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>BOTTOM_SHELL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>BRACKET</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>BRACING</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>CHAIN_LOCKER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>COLLISION_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>COLUMN</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>CROSS_TIE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DECK_BEAM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DECK_HOUSE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DECK_IN_SUPERSTRUCTURE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>DUCT_KEEL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ENGINE_FOUNDATION</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>FLOOR</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>FORECASTLE_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>FRAME</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>GIRDER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HATCH_COVER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HATCHWAY_COAMING</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HATCHWAY_ENDCOAMING</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HATCHWAY_SIDECOAMING</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HOPPER_PLATE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HOPPER_LONGITUDINAL_PANEL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>HOPPER_TRANSVERSE_WEB_FRAME</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>INNER_BOTTOM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>INNER_SHELL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>KEEL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LONGITUDINAL_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LONGITUDINAL_PLATE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LONGITUDINAL_GIRDER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LOWER_BOOM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>MACHINERY_CASING</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>MAIN_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>NAVIGATION_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>OUTER_SHELL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>PLATFORM_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>PONTOON</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>POOP_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SHEER_STRAKE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SIDE_SHELL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>STOOL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>STRENGTH_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>STRENGTH_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>STRINGER</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SUPERSTRUCTURE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SUPERSTRUCTURE_AFT_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SUPERSTRUCTURE_FRONT_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>SUPERSTRUCTURE_SIDE_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TANK_BOTTOM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TANK_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TANK_SIDE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TANK_TOP</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TOPSIDE_STRUCTURE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TRANSOM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TRANSVERSAL_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TRANSVERSE_PLATE</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>TRANSVERSE_WEB_FRAME</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>UPPER_BOOM</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>USER_DEFINED</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WALL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WASH_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WEATHER_DECK</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WEB_FRAME</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WING_BULKHEAD</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WING_LONGITUDINAL_PANEL</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>WING_TRANSVERSE_WEB_FRAME</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>FunctionalProperty</i></b></li>
+                     <ul>
+                        <li><a href="type1.html">type</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="type1.html">type</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

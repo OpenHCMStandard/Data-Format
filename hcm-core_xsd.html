@@ -1,0 +1,599 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema hcm-core.xsd in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'hcm-core_xsd');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>hcm-core.xsd</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>This schema document defines data types, which are specific for the purposes of the HCMA process. Consequently, the character of the data types defined in this schema document is
+			process specific.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" blockDefault="#all" version="2.0"&gt;
+	&lt;xs:include schemaLocation="hcm-sdt.xsd"/&gt;
+	&lt;xs:include schemaLocation="hcm-pdt.xsd"/&gt;
+	&lt;xs:annotation&gt;
+		&lt;xs:documentation&gt;This schema document defines data types, which are specific for the purposes of the HCMA process. Consequently, the character of the data types defined in this schema document is
+			process specific.&lt;/xs:documentation&gt;
+	&lt;/xs:annotation&gt;
+	&lt;xs:complexType name="HullConditionObject" abstract="true" block=""&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;
+				&lt;p&gt;An object of the steel structure (hull) that is subject to condition assessment.&lt;/p&gt;
+			&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="id" type="globalId" use="required"/&gt;
+		&lt;xs:attribute name="name" type="xs:string"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Gaugings"&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Gauging" type="MeasurementPoint" minOccurs="0" maxOccurs="unbounded"/&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MeasurementPoint"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Contains the information about the individual measurement points. It contains an optional element
+				&lt;code&gt;Coordinates&lt;/code&gt;of type
+				&lt;code&gt;CartesianPoint&lt;/code&gt;that contains the corresponding three coordinates of the point with respect to the global ship coordinate system. The Element
+				&lt;code&gt;Coordinate&lt;/code&gt;is optional because the geometry data of the vessel may or may not be available.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Coordinates" type="CartesianPoint" minOccurs="0"/&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="id" type="globalId" use="required"/&gt;
+		&lt;xs:attribute name="name" type="xs:string"/&gt;
+		&lt;xs:attribute name="description" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;A textual description of the measurement point which makes it possible to add additional information concerning the measurement point (e.g. average value).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="comment" type="xs:string"/&gt;
+		&lt;xs:attribute name="refId" type="globalId" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;A pointer to either a plate or profile at which the measurement has been taken.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="part" type="stiffenerDetail"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;For a measurement point on a stiffener this attribute defines the position of the point on the stiffener (“
+					&lt;code&gt;web&lt;/code&gt;” or “
+					&lt;code&gt;flange&lt;/code&gt;”). It is defined as an enumeration of type
+					&lt;code&gt;xs:string&lt;/code&gt;having following values:
+					&lt;code&gt;web&lt;/code&gt;,
+					&lt;code&gt;flange&lt;/code&gt;.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="value" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The value of the measured thickness expressed in meters.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="position" type="positionType"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The position of the reading, in case there is no geometry information.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="frameNumber" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The longitudinal position of the measurement point by means of a frame number. It only applies if no geometry information is available (i.e. the child-element
+					&lt;code&gt;Coordinates&lt;/code&gt;)&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="sessionId" type="globalId"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;Unique reference to the measurement session where the measurement was taken. Useful for auditing purposes. Each measurement point with value shall be linked to exactly one session. Shall be empty if value is not set. If there is exactly one session, the measurement point is associated implicitly to that session. Otherwise the session id must be specified explicitly.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Plate"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;
+				&lt;p&gt;An individual plate object is unambiguously defined by following characteristics:
+					&lt;ul&gt;
+						&lt;li&gt;Name of structural element: e.g. SHELL&lt;/li&gt;
+						&lt;li&gt;Name of plate strake: e.g. "A"&lt;/li&gt;
+						&lt;li&gt;Name or number of plate for corresponding strake: e.g. 1&lt;/li&gt;
+						&lt;li&gt;Side identifier: e.g. P or S Sample plate name: "SHELL.B.10.P"&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/p&gt;
+				&lt;p&gt;A FlatPlate is a plate belonging to flat shipbuilding panel surface, e.g. a deck, a longitudinal or transverse bulkheads, etc. All vertices of the Polyline representing the outer or inner
+					contours lay on the same plane. The global coordinates can be obtained by determining the global normal direction of the structural member (e.g. positive X dir. for Transv. Bhds, positive Y dir.
+					for longitudinal bulkheads, and positive Z direction for Decks and Stringers).&lt;/p&gt;
+				&lt;p&gt;Curved Plates are represented in Expansion Coordinates (e.g. in the Shell Expansion). The x coordinate is the global x coordinate of the ship. The y coordinate is the expanded frame contour at
+					the corresponding x-position.&lt;/p&gt;
+			&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="PlateGeometry"&gt;
+				&lt;xs:attribute name="memberId" type="globalId" use="required"/&gt;
+				&lt;xs:attribute name="strake" type="xs:string"/&gt;
+				&lt;xs:attribute name="number" type="xs:string"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;A number denotes the individual plate item identification within a strake. According to the usual numbering system, any alpha-numeric character is permitted.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+				&lt;xs:attribute name="side" type="locationType" use="required"/&gt;
+				&lt;xs:attributeGroup ref="thicknessParameters"/&gt;
+				&lt;xs:attribute name="materialId" type="globalId"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;reference to mechanical properties&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+				&lt;xs:attribute name="installationDate" type="xs:date"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation xml:lang="en"&gt;Date when the repair is being completed including welding and coating (if applicable), not the manufacturing date of the plate. Defaults to date of
+							build of the vessel if not set.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MeasurementItem"&gt;
+		&lt;xs:attribute name="gaugingId" type="globalId" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;Unique identifier within the XML document.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MeasurementTask" abstract="true" final=""&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;Measurement tasks are used to break down the overall scope of measurements into manageable pieces. They are typically agreed between thickness measurement company, ship owner and class society during the planning meeting of a measurement campaign. Each measurement task defines areas on the hull structure that are to be measured or that were measured. These areas are specified by lists of structural parts, structural members or compartments. Additionally, a frame ranges may be given. Each measurement task contains an associated set of measurement points that shall be measured or that were measured.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Attachments" type="DocumentReferences" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;Documents, drawings, sketches, photos related to this measurement task. The main purpose of those documents is to document the position of individual measurements unambiguously. Typical formats
+						are .jpg, .tiff, .bmp, .png, .pdf.
+						&lt;UL&gt;
+							&lt;li&gt;photos documenting failures per compartment, often recorded with position, typical format is .jpg&lt;/li&gt;
+							&lt;li&gt;personal or company certificates, typical format (.jpg,.tiff,.bmp,.png,.pdf)&lt;/li&gt;
+						&lt;/UL&gt;
+					&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="Item" type="MeasurementItem" minOccurs="0" maxOccurs="unbounded"/&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="id" type="globalId" use="required"/&gt;
+		&lt;xs:attribute name="name" type="xs:string"/&gt;
+		&lt;xs:attribute name="title" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;May contain additional information, e.g. for grouping in the context of ESP.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="status" type="statusType" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;For information only. It allows asking for open tasks. When a campaign is complete, the status of all tasks shall be "complete".&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="comment" type="xs:string"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="CrossSectionTask"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="MeasurementTask"&gt;
+				&lt;xs:attribute name="frameNumber" type="xs:string" use="required"/&gt;
+				&lt;xs:attribute name="minOffset" type="xs:double"/&gt;
+				&lt;xs:attribute name="maxOffset" type="xs:double"/&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MemberTask"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="MeasurementTask"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="BoundingBox" type="BoundingBox" minOccurs="0"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation xml:lang="en"&gt;
+								&lt;UL&gt;
+									&lt;LI&gt;Optional bounding box defining the scope of this measurement task. However, measurement points are not required to fit to the scope.&lt;/LI&gt;
+								&lt;/UL&gt;
+							&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+					&lt;xs:element name="MemberId" type="globalId" maxOccurs="unbounded"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation xml:lang="en"&gt;
+								&lt;UL&gt;
+									&lt;LI&gt;Optional set of references to members defining the scope of this measurement task. However, measurement points are not required to fit to the scope.&lt;/LI&gt;
+								&lt;/UL&gt;
+							&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="CompartmentTask"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="MeasurementTask"&gt;
+				&lt;xs:attribute name="compartmentId" type="globalId" use="required"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation xml:lang="en"&gt;
+							&lt;UL&gt;
+								&lt;LI&gt;Reference to the compartment defining the scope of this measurement task. However, measurement points are not required to fit to the scope.&lt;/LI&gt;
+							&lt;/UL&gt;
+						&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="GeneralTask"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="MeasurementTask"/&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Member"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="HullConditionObject"&gt;
+				&lt;xs:attribute name="type" type="FunctionalProperty" use="required"/&gt;
+				&lt;xs:attribute name="description" type="xs:string"/&gt;
+				&lt;xs:attribute name="side" type="locationType"/&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Stiffener"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation source="GL Rules I-Part 1, section 3 H, chapter 3, page 3-12, edition 2008" xml:lang="en"&gt;A Stiffener is a structural part that is made from profile shaped stock
+				material manufactured at a mill.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="StiffenerGeometry"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="Flange" type="Flange" minOccurs="0" maxOccurs="2"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;The number of flanges must be consistent with profile type.
+								&lt;UL&gt;
+									&lt;LI&gt;No flange for profiles of type FB, HP, or O.&lt;/LI&gt;
+									&lt;LI&gt;One flange for profiles of type L, T, or RHS.&lt;/LI&gt;
+									&lt;LI&gt;Two flanges for profiles of type I or C.&lt;/LI&gt;
+								&lt;/UL&gt;
+								Furthermore, in case of two flanges, their position shall be different.
+							&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:element&gt;
+				&lt;/xs:sequence&gt;
+				&lt;xs:attributeGroup ref="profileParameters"/&gt;
+				&lt;xs:attribute name="memberId" type="globalId" use="required"/&gt;
+				&lt;xs:attribute name="orientation" type="stiffenerOrientation"/&gt;
+				&lt;xs:attribute name="offset" type="xs:double"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;Denotes the distance between the insertion point of the stiffener and the trace line (in meters).&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+				&lt;xs:attribute name="side" type="locationType"/&gt;
+				&lt;xs:attribute name="materialId" type="globalId"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;reference to material properties&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+				&lt;xs:attribute name="installationDate" type="xs:date"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation xml:lang="en"&gt;Date when the repair is being completed including welding and coating (if applicable), not the manufacturing date of the stiffener. Defaults to date
+							of build of the vessel if not set.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Compartment"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="HullConditionObject"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="PlateReferences" minOccurs="0"&gt;
+						&lt;xs:complexType&gt;
+							&lt;xs:sequence&gt;
+								&lt;xs:element name="PlateReference" type="PlateReference" minOccurs="0" maxOccurs="unbounded"/&gt;
+							&lt;/xs:sequence&gt;
+						&lt;/xs:complexType&gt;
+					&lt;/xs:element&gt;
+					&lt;xs:element name="StiffenerReferences" minOccurs="0"&gt;
+						&lt;xs:complexType&gt;
+							&lt;xs:sequence&gt;
+								&lt;xs:element name="StiffenerReference" type="StiffenerReference" minOccurs="0" maxOccurs="unbounded"/&gt;
+							&lt;/xs:sequence&gt;
+						&lt;/xs:complexType&gt;
+					&lt;/xs:element&gt;
+					&lt;xs:element name="BoundingBox" type="BoundingBox" minOccurs="0"/&gt;
+				&lt;/xs:sequence&gt;
+				&lt;xs:attribute name="purpose" type="compartmentPurpose"/&gt;
+				&lt;xs:attribute name="side" type="locationType"/&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="ShipStructure"&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Plates" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Plate" type="Plate" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="Stiffeners" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Stiffener" type="Stiffener" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="StructureMembers" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Member" type="Member" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="Compartments" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Compartment" type="Compartment" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="Materials" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Material" type="Material" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="PlateReference"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="PlateGeometry"&gt;
+				&lt;xs:attribute name="refId" type="globalId" use="required"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;Global unique dentifier of the underlying plate.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="StiffenerReference"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="StiffenerGeometry"&gt;
+				&lt;xs:attribute name="refId" type="globalId" use="required"&gt;
+					&lt;xs:annotation&gt;
+						&lt;xs:documentation&gt;Global unique dentifier of the underlying stiffener.&lt;/xs:documentation&gt;
+					&lt;/xs:annotation&gt;
+				&lt;/xs:attribute&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="PlateGeometry"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="HullConditionObject"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="OuterContour" type="Polyline" minOccurs="0"/&gt;
+					&lt;xs:element name="InnerContour" type="Polyline" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;xs:element name="ExpandedOuterContour" type="Polyline2D" minOccurs="0"/&gt;
+					&lt;xs:element name="ExpandedInnerContour" type="Polyline2D" minOccurs="0" maxOccurs="unbounded"/&gt;
+					&lt;xs:element name="Mesh" type="Mesh" minOccurs="0"/&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="StiffenerGeometry"&gt;
+		&lt;xs:complexContent&gt;
+			&lt;xs:extension base="HullConditionObject"&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element name="TraceLine" type="Polyline" minOccurs="0"/&gt;
+					&lt;xs:element name="ExpandedTraceLine" type="Polyline2D" minOccurs="0"/&gt;
+					&lt;xs:element name="Orientations" type="Orientations" minOccurs="0"/&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:extension&gt;
+		&lt;/xs:complexContent&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Flange"&gt;
+		&lt;xs:attribute name="breadth" type="positiveValue"/&gt;
+		&lt;xs:attribute name="position" type="flangePosition" default="upper"/&gt;
+		&lt;xs:attributeGroup ref="thicknessParameters"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:simpleType name="flangePosition"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Location of flange relative to the reference point.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="upper"/&gt;
+			&lt;xs:enumeration value="lower"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:complexType name="Material"&gt;
+		&lt;xs:attribute name="id" type="globalId" use="required"/&gt;
+		&lt;xs:attribute name="name" type="xs:string"/&gt;
+		&lt;xs:attribute name="poissonRatio" type="xs:double"/&gt;
+		&lt;xs:attribute name="density" type="xs:double"/&gt;
+		&lt;xs:attribute name="tensileStrength" type="xs:double"/&gt;
+		&lt;xs:attribute name="yieldStrength" type="xs:double"/&gt;
+		&lt;xs:attribute name="elasticModulus" type="xs:double"/&gt;
+		&lt;xs:attribute name="soundSpeed" type="xs:double"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MeasurementSession"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation xml:lang="en"&gt;A measurement session is a part of a measurement campaign that contains thickness measurements executed in a single location (port stay, on voyage or dry dock) by specified personnel of a thickness measurement company, supervised by a surveyor within a contiguous period in time. This period can be for example as small as a working day. A measurement campaign may consist several measurement sessions due to limitations in time and accessibility of structures and compartments, the vessels schedule or limited dry dock capacities. Measurement sessions will differ by time frame, location and/or executing company. 
+Each measurement point with value must be associated to exactly one measurement session. If there is only one session, this association can be implicit.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Duration" type="TimeSpan" minOccurs="0"/&gt;
+			&lt;xs:element name="ExecutingCompany" type="CertifiedCompany" minOccurs="0"/&gt;
+			&lt;xs:element name="Operator" type="Person" maxOccurs="unbounded"/&gt;
+			&lt;xs:element name="Attachments" type="DocumentReferences" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation xml:lang="en"&gt;
+						&lt;UL&gt;
+							&lt;LI&gt;Documents, drawings, photos and gauging files related the state of the vessel during this measurement session. This includes actual readings recorded by a gauging device (data logger) in
+								proprietary format. Typical formats are .jpg, .tiff, .bmp, .png, .pdf, .utm.&lt;/LI&gt;
+							&lt;LI&gt;Photos documenting individual failures per structural member or compartment, optionally recorded with position, typical format is .jpg.&lt;/LI&gt;
+						&lt;/UL&gt;
+					&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="location" type="xs:string" use="required"/&gt;
+		&lt;xs:attribute name="equipment" type="xs:string" use="required"/&gt;
+		&lt;xs:attribute name="surveyorName" type="xs:string" use="required"/&gt;
+		&lt;xs:attribute name="id" type="globalId" use="required"/&gt;
+		&lt;xs:attribute name="status" type="statusType" use="required"/&gt;
+		&lt;xs:attribute name="comment" type="xs:string"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="MeasurementGroupType"&gt;
+		&lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+			&lt;xs:element name="MemberTask" type="MemberTask"/&gt;
+			&lt;xs:element name="CrossSectionTask" type="CrossSectionTask"/&gt;
+			&lt;xs:element name="CompartmentTask" type="CompartmentTask"/&gt;
+			&lt;xs:element name="GeneralTask" type="GeneralTask"/&gt;
+		&lt;/xs:choice&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:attributeGroup name="thicknessParameters"&gt;
+		&lt;xs:attribute name="thickness" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;Material thickness as approved by the classification society according to steel drawings. In case of CSR-vessels this value is called
+					&lt;em&gt;Gross Thickness Offered&lt;/em&gt;.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="replacementThickness" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;Material thickness to be used for replacement. If not set,
+					&lt;code&gt;builtThickness&lt;/code&gt;can be used instead.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="builtThickness" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;Actual material thickness to be built according to the steel drawing submitted to the classification society for approval. If not set,
+					&lt;code&gt;thickness&lt;/code&gt;can be used instead. For CSR-vessels this value can be used to calculate the
+					&lt;em&gt;voluntary thickness addition&lt;/em&gt;as difference between builtThickness and thickness. Any change to this value will affect maxDiminution in case of standard class rules.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="maxDiminution" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;Maximum allowed material diminution as defined by regulations of the class society. Only used for standard class rules (non-CSR vessels). If not set, the difference between
+					thickness and steelRenewal can be used instead.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="steelRenewal" type="xs:double"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation source="IACS UR S31" xml:lang="en"&gt;Material thickness at which plate or stiffener must be replaced. Used for CSR-vessels and side shell frames in bulk carriers built in accordance to IACS UR S31. In case of CSR-vessels this value
+					is called
+					&lt;em&gt;Renewal Thickness&lt;/em&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="coatingRenewal" type="xs:double"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation source="IACS UR S31" xml:lang="en"&gt;Material thickness at which coating must be renewed. Applicable to side shell frames in bulk carriers built in accordance to IACS
+					UR S31.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:attributeGroup&gt;
+	&lt;xs:attributeGroup name="profileParameters"&gt;
+		&lt;xs:attribute name="height" type="positiveValue"/&gt;
+		&lt;xs:attribute name="type" type="stiffenerType" use="required"/&gt;
+		&lt;xs:attributeGroup ref="thicknessParameters"/&gt;
+		&lt;xs:attribute name="radius" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation xml:lang="en"&gt;Outer radius of the profile. Only to be used for profiles of type O.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:attributeGroup&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="AttributeGroup" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>AttributeGroups:</b></td>
+            </tr>
+            <tr id="AttributeGroup_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="profileparameters.html">profileParameters</a></li>
+                     <li><a href="thicknessparameters.html">thicknessParameters</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="compartment.html">Compartment</a></li>
+                     <li><a href="compartmenttask.html">CompartmentTask</a></li>
+                     <li><a href="crosssectiontask.html">CrossSectionTask</a></li>
+                     <li><a href="flange.html">Flange</a></li>
+                     <li><a href="gaugings.html">Gaugings</a></li>
+                     <li><a href="generaltask.html">GeneralTask</a></li>
+                     <li><a href="hullconditionobject.html">HullConditionObject</a></li>
+                     <li><a href="material.html">Material</a></li>
+                     <li><a href="measurementgrouptype.html">MeasurementGroupType</a></li>
+                     <li><a href="measurementitem.html">MeasurementItem</a></li>
+                     <li><a href="measurementpoint.html">MeasurementPoint</a></li>
+                     <li><a href="measurementsession.html">MeasurementSession</a></li>
+                     <li><a href="measurementtask.html">MeasurementTask</a></li>
+                     <li><a href="member.html">Member</a></li>
+                     <li><a href="membertask1.html">MemberTask</a></li>
+                     <li><a href="plate.html">Plate</a></li>
+                     <li><a href="plategeometry.html">PlateGeometry</a></li>
+                     <li><a href="platereference1.html">PlateReference</a></li>
+                     <li><a href="shipstructure.html">ShipStructure</a></li>
+                     <li><a href="stiffener1.html">Stiffener</a></li>
+                     <li><a href="stiffenergeometry.html">StiffenerGeometry</a></li>
+                     <li><a href="stiffenerreference1.html">StiffenerReference</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="SimpleType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>SimpleTypes:</b></td>
+            </tr>
+            <tr id="SimpleType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="flangeposition.html">flangePosition</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

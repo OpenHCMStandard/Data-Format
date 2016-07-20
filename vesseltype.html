@@ -1,0 +1,462 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item vesselType in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('SimpleType', 'vesseltype');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>SimpleType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>vesselType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-sdt_xsd.html">hcm-sdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>A description of the function, purpose or mission a ship is designed for (see ISO 10303-218, section 4.2.203). The
+VesselTypedefines a choice group containing various elements.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/vesseltype.png" border="0" alt="XSD Diagram of vesselType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:simpleType name="vesselType"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;A description of the function, purpose or mission a ship is designed for (see ISO 10303-218, section 4.2.203). The
+				&lt;code&gt;VesselType&lt;/code&gt;defines a choice group containing various elements.&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+        &lt;xs:enumeration value="barge" /&gt;
+        &lt;xs:enumeration value="barge_for_deck_loading" /&gt;
+        &lt;xs:enumeration value="barge_for_liquefied_gas" /&gt;
+        &lt;xs:enumeration value="barge_for_oil" /&gt;
+        &lt;xs:enumeration value="barge_pontoon" /&gt;
+        &lt;xs:enumeration value="bulk_carrier" /&gt;
+        &lt;xs:enumeration value="car_carrier" /&gt;
+        &lt;xs:enumeration value="car_ferry" /&gt;
+        &lt;xs:enumeration value="cargo_ship_carrying_passengers" /&gt;
+        &lt;xs:enumeration value="chemical_tanker" /&gt;
+        &lt;xs:enumeration value="chemical_tanker_type_1" /&gt;
+        &lt;xs:enumeration value="container_carrier" /&gt;
+        &lt;xs:enumeration value="cruise_liner" /&gt;
+        &lt;xs:enumeration value="dry_cargo_vessel" /&gt;
+        &lt;xs:enumeration value="ferry" /&gt;
+        &lt;xs:enumeration value="gas_carrier" /&gt;
+        &lt;xs:enumeration value="general_cargo_carrier" /&gt;
+        &lt;xs:enumeration value="highspeedcraft_cargo" /&gt;
+        &lt;xs:enumeration value="highspeedcraft_passenger" /&gt;
+        &lt;xs:enumeration value="hydrofoil" /&gt;
+        &lt;xs:enumeration value="liquefied_gas_tanker" /&gt;
+        &lt;xs:enumeration value="LNG_carrier" /&gt;
+        &lt;xs:enumeration value="LPG_carrier" /&gt;
+        &lt;xs:enumeration value="oil_tanker" /&gt;
+        &lt;xs:enumeration value="ore_carrier" /&gt;
+        &lt;xs:enumeration value="passenger_vessel" /&gt;
+        &lt;xs:enumeration value="product_tanker" /&gt;
+        &lt;xs:enumeration value="refrigerated_cargo_carrying_ship" /&gt;
+        &lt;xs:enumeration value="roro_vessel" /&gt;
+        &lt;xs:enumeration value="tanker_for_refrigerated_fruit_juice" /&gt;
+        &lt;xs:enumeration value="user_defined" /&gt;
+        &lt;xs:enumeration value="crane_vessel" /&gt;
+        &lt;xs:enumeration value="dredger" /&gt;
+        &lt;xs:enumeration value="drilling_vessel" /&gt;
+        &lt;xs:enumeration value="fire_fighter" /&gt;
+        &lt;xs:enumeration value="fishing_vessel" /&gt;
+        &lt;xs:enumeration value="floating_dock" /&gt;
+        &lt;xs:enumeration value="floating_hotel" /&gt;
+        &lt;xs:enumeration value="FPGO" /&gt;
+        &lt;xs:enumeration value="FPSO" /&gt;
+        &lt;xs:enumeration value="ice_breaker" /&gt;
+        &lt;xs:enumeration value="offshore_supply_vessel" /&gt;
+        &lt;xs:enumeration value="oil_production_and_storage_vessel" /&gt;
+        &lt;xs:enumeration value="oil_production_vessel" /&gt;
+        &lt;xs:enumeration value="oil_storage_vessel" /&gt;
+        &lt;xs:enumeration value="pilot_boat" /&gt;
+        &lt;xs:enumeration value="pipe_laying_vessel" /&gt;
+        &lt;xs:enumeration value="pusher" /&gt;
+        &lt;xs:enumeration value="reefer" /&gt;
+        &lt;xs:enumeration value="sealer" /&gt;
+        &lt;xs:enumeration value="shuttle_tanker" /&gt;
+        &lt;xs:enumeration value="stern_trawler" /&gt;
+        &lt;xs:enumeration value="supply_vessel" /&gt;
+        &lt;xs:enumeration value="tug" /&gt;
+        &lt;xs:enumeration value="well_stimulation_vessel" /&gt;
+        &lt;xs:enumeration value="aircraft_carrier" /&gt;
+        &lt;xs:enumeration value="auxiliary_oiler" /&gt;
+        &lt;xs:enumeration value="corvette" /&gt;
+        &lt;xs:enumeration value="cruiser" /&gt;
+        &lt;xs:enumeration value="destroyer" /&gt;
+        &lt;xs:enumeration value="fleet_auxiliary_vessel" /&gt;
+        &lt;xs:enumeration value="frigate" /&gt;
+        &lt;xs:enumeration value="landing_platform_dock" /&gt;
+        &lt;xs:enumeration value="landing_platform_helicopter" /&gt;
+        &lt;xs:enumeration value="mine_warfare_ship" /&gt;
+        &lt;xs:enumeration value="patrol_force_vessel" /&gt;
+        &lt;xs:enumeration value="service_craft" /&gt;
+        &lt;xs:enumeration value="submarine" /&gt;
+        &lt;xs:enumeration value="user_defined" /&gt;
+    &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>barge</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>barge_for_deck_loading</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>barge_for_liquefied_gas</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>barge_for_oil</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>barge_pontoon</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>bulk_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>car_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>car_ferry</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>cargo_ship_carrying_passengers</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>chemical_tanker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>chemical_tanker_type_1</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>container_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>cruise_liner</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>dry_cargo_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ferry</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>gas_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>general_cargo_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>highspeedcraft_cargo</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>highspeedcraft_passenger</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>hydrofoil</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>liquefied_gas_tanker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LNG_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>LPG_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>oil_tanker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ore_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>passenger_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>product_tanker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>refrigerated_cargo_carrying_ship</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>roro_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>tanker_for_refrigerated_fruit_juice</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>user_defined</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>crane_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>dredger</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>drilling_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>fire_fighter</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>fishing_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>floating_dock</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>floating_hotel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>FPGO</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>FPSO</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>ice_breaker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>offshore_supply_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>oil_production_and_storage_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>oil_production_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>oil_storage_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>pilot_boat</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>pipe_laying_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>pusher</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>reefer</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>sealer</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>shuttle_tanker</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>stern_trawler</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>supply_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>tug</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>well_stimulation_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>aircraft_carrier</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>auxiliary_oiler</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>corvette</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>cruiser</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>destroyer</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>fleet_auxiliary_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>frigate</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>landing_platform_dock</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>landing_platform_helicopter</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>mine_warfare_ship</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>patrol_force_vessel</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>service_craft</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>submarine</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Enumeration</b></td>
+                        <td>user_defined</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>vesselType</i></b></li>
+                     <ul>
+                        <li><a href="shiptype.html">shipType</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="shiptype.html">shipType</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

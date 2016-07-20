@@ -1,0 +1,199 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item CartesianPoint in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'cartesianpoint');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>CartesianPoint</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-pdt_xsd.html">hcm-pdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>&lt;p&gt;
+	    A point defined by its coordinates in a rectangular
+	    Cartesian coordinate system, or in a parameter space. The
+	    entity is defined in a two or three-dimensional space as
+	    determined by the number of coordinates in the list.
+	  &lt;/p&gt;
+	  &lt;p&gt;
+	    &lt;b&gt;Note 1:&lt;/b&gt;For the purposes of defining geometry in HCM
+	    only two or three-dimensional points are used.
+	  &lt;/p&gt;
+A point defined by its coordinates in a rectangular Cartesian coordinate system, or in a parameter space. The entity is defined in a two or three-dimensional space as determined by the number
+					of coordinates in the list.
+
+					Note 1:For the purposes of defining geometry in HCM only two or three-dimensional points are used.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="331,131,473,175" href="z.html" alt="Drilldown into z"></area>
+                     <area shape="rect" coords="331,79,473,123" href="y.html" alt="Drilldown into y"></area>
+                     <area shape="rect" coords="331,27,473,71" href="x.html" alt="Drilldown into x"></area></map><img src="images/cartesianpoint.png" border="0" alt="XSD Diagram of CartesianPoint" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="CartesianPoint"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation source="ISO-10303-42/Section_4.4.4"&gt;&lt;![CDATA[
+	  &lt;p&gt;
+	    A point defined by its coordinates in a rectangular
+	    Cartesian coordinate system, or in a parameter space. The
+	    entity is defined in a two or three-dimensional space as
+	    determined by the number of coordinates in the list.
+	  &lt;/p&gt;
+	  &lt;p&gt;
+	    &lt;b&gt;Note 1:&lt;/b&gt;For the purposes of defining geometry in HCM
+	    only two or three-dimensional points are used.
+	  &lt;/p&gt;]]&gt;&lt;/xs:documentation&gt;
+        &lt;xs:documentation source="ISO-10303-42/Section_4.4.4"&gt;
+            &lt;p&gt;A point defined by its coordinates in a rectangular Cartesian coordinate system, or in a parameter space. The entity is defined in a two or three-dimensional space as determined by the number
+					of coordinates in the list.&lt;/p&gt;
+            &lt;p&gt;
+                &lt;b&gt;Note 1:&lt;/b&gt;For the purposes of defining geometry in HCM only two or three-dimensional points are used.&lt;/p&gt;
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:attribute name="x" type="xs:double" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;First coordinate of the point.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="y" type="xs:double" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Second coordinate of the point.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="z" type="xs:double"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;Third coordinate of the point.&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">x</td>
+                        <td><a href="x.html">x</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">y</td>
+                        <td><a href="y.html">y</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">z</td>
+                        <td><a href="z.html">z</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>CartesianPoint</i></b></li>
+                     <ul>
+                        <li><a href="coordinates.html">Coordinates</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="position2.html">Position</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="meshvertex.html">MeshVertex</a></li>
+                        <ul>
+                           <li><a href="vertex.html">Vertex</a></li>
+                        </ul>
+                     </ul>
+                     <ul>
+                        <li><a href="vertex4.html">Vertex</a></li>
+                     </ul>
+                     <ul>
+                        <li><a href="vertex5.html">Vertex</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="coordinates.html">Coordinates</a>, <a href="meshvertex.html">MeshVertex</a>, <a href="position2.html">Position</a>, <a href="vertex4.html">Vertex</a>, <a href="vertex5.html">Vertex</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

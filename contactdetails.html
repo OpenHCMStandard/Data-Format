@@ -1,0 +1,146 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item contactDetails in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('AttributeGroup', 'contactdetails');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>AttributeGroup</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>contactDetails</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-pdt_xsd.html">hcm-pdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Detailed information accrding a contact (
+Companyor
+Person).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="199,193,341,218" href="email.html" alt="Drilldown into email"></area>
+                     <area shape="rect" coords="199,161,341,186" href="fax.html" alt="Drilldown into fax"></area>
+                     <area shape="rect" coords="199,129,341,154" href="phone.html" alt="Drilldown into phone"></area>
+                     <area shape="rect" coords="199,97,341,122" href="country.html" alt="Drilldown into country"></area>
+                     <area shape="rect" coords="199,65,341,90" href="zip.html" alt="Drilldown into zip"></area>
+                     <area shape="rect" coords="199,33,341,58" href="city.html" alt="Drilldown into city"></area>
+                     <area shape="rect" coords="199,1,341,26" href="address.html" alt="Drilldown into address"></area></map><img src="images/contactdetails.png" border="0" alt="XSD Diagram of contactDetails" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:attributeGroup name="contactDetails"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Detailed information accrding a contact (
+				&lt;code&gt;Company&lt;/code&gt;or
+				&lt;code&gt;Person&lt;/code&gt;).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:attribute name="address" type="xs:string" /&gt;
+    &lt;xs:attribute name="city" type="xs:string" /&gt;
+    &lt;xs:attribute name="zip" type="xs:string" /&gt;
+    &lt;xs:attribute name="country" type="xs:string" /&gt;
+    &lt;xs:attribute name="phone" type="xs:string" /&gt;
+    &lt;xs:attribute name="fax" type="xs:string" /&gt;
+    &lt;xs:attribute name="email" type="xs:string" /&gt;
+&lt;/xs:attributeGroup&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">address</td>
+                        <td><a href="address.html">address</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">city</td>
+                        <td><a href="city.html">city</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">zip</td>
+                        <td><a href="zip.html">zip</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">country</td>
+                        <td><a href="country.html">country</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">phone</td>
+                        <td><a href="phone.html">phone</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">fax</td>
+                        <td><a href="fax.html">fax</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">email</td>
+                        <td><a href="email.html">email</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

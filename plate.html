@@ -1,0 +1,320 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item Plate in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'plate');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>Plate</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td><a href="plategeometry.html">PlateGeometry</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-core_xsd.html">hcm-core.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>An individual plate object is unambiguously defined by following characteristics:
+
+        Name of structural element: e.g. SHELL
+        Name of plate strake: e.g. "A"
+        Name or number of plate for corresponding strake: e.g. 1
+        Side identifier: e.g. P or S Sample plate name: "SHELL.B.10.P"
+
+
+A FlatPlate is a plate belonging to flat shipbuilding panel surface, e.g. a deck, a longitudinal or transverse bulkheads, etc. All vertices of the Polyline representing the outer or inner
+    contours lay on the same plane. The global coordinates can be obtained by determining the global normal direction of the structural member (e.g. positive X dir. for Transv. Bhds, positive Y dir.
+    for longitudinal bulkheads, and positive Z direction for Decks and Stringers).
+Curved Plates are represented in Expansion Coordinates (e.g. in the Shell Expansion). The x coordinate is the global x coordinate of the ship. The y coordinate is the expanded frame contour at
+    the corresponding x-position.</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="367,1066,509,1091" href="name.html" alt="Drilldown into name"></area>
+                     <area shape="rect" coords="367,1015,509,1059" href="id.html" alt="Drilldown into id"></area>
+                     <area shape="rect" coords="327,890,631,955" href="installationdate.html" alt="Drilldown into installationDate"></area>
+                     <area shape="rect" coords="327,823,477,883" href="materialid.html" alt="Drilldown into materialId"></area>
+                     <area shape="rect" coords="347,739,646,804" href="coatingrenewal.html" alt="Drilldown into coatingRenewal"></area>
+                     <area shape="rect" coords="347,647,648,732" href="steelrenewal.html" alt="Drilldown into steelRenewal"></area>
+                     <area shape="rect" coords="347,549,640,639" href="maxdiminution.html" alt="Drilldown into maxDiminution"></area>
+                     <area shape="rect" coords="347,421,653,541" href="builtthickness.html" alt="Drilldown into builtThickness"></area>
+                     <area shape="rect" coords="347,344,591,414" href="replacementthickness.html" alt="Drilldown into replacementThickness"></area>
+                     <area shape="rect" coords="347,257,646,337" href="thickness.html" alt="Drilldown into thickness"></area>
+                     <area shape="rect" coords="327,157,492,223" href="side2.html" alt="Drilldown into side"></area>
+                     <area shape="rect" coords="327,84,633,149" href="number.html" alt="Drilldown into number"></area>
+                     <area shape="rect" coords="327,52,469,77" href="strake.html" alt="Drilldown into strake"></area>
+                     <area shape="rect" coords="327,1,477,45" href="memberid1.html" alt="Drilldown into memberId"></area></map><img src="images/plate.png" border="0" alt="XSD Diagram of Plate" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="Plate"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;
+            &lt;p&gt;An individual plate object is unambiguously defined by following characteristics:
+					&lt;ul&gt;&lt;li&gt;Name of structural element: e.g. SHELL&lt;/li&gt;
+                    &lt;li&gt;Name of plate strake: e.g. "A"&lt;/li&gt;
+                    &lt;li&gt;Name or number of plate for corresponding strake: e.g. 1&lt;/li&gt;
+                    &lt;li&gt;Side identifier: e.g. P or S Sample plate name: "SHELL.B.10.P"&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/p&gt;
+            &lt;p&gt;A FlatPlate is a plate belonging to flat shipbuilding panel surface, e.g. a deck, a longitudinal or transverse bulkheads, etc. All vertices of the Polyline representing the outer or inner
+					contours lay on the same plane. The global coordinates can be obtained by determining the global normal direction of the structural member (e.g. positive X dir. for Transv. Bhds, positive Y dir.
+					for longitudinal bulkheads, and positive Z direction for Decks and Stringers).&lt;/p&gt;
+            &lt;p&gt;Curved Plates are represented in Expansion Coordinates (e.g. in the Shell Expansion). The x coordinate is the global x coordinate of the ship. The y coordinate is the expanded frame contour at
+					the corresponding x-position.&lt;/p&gt;
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:complexContent&gt;
+        &lt;xs:extension base="PlateGeometry"&gt;
+            &lt;xs:attribute name="memberId" type="globalId" use="required" /&gt;
+            &lt;xs:attribute name="strake" type="xs:string" /&gt;
+            &lt;xs:attribute name="number" type="xs:string"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;A number denotes the individual plate item identification within a strake. According to the usual numbering system, any alpha-numeric character is permitted.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="side" type="locationType" use="required" /&gt;
+            &lt;xs:attributeGroup ref="thicknessParameters" /&gt;
+            &lt;xs:attribute name="materialId" type="globalId"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation&gt;reference to mechanical properties&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+            &lt;xs:attribute name="installationDate" type="xs:date"&gt;
+                &lt;xs:annotation&gt;
+                    &lt;xs:documentation xml:lang="en"&gt;Date when the repair is being completed including welding and coating (if applicable), not the manufacturing date of the plate. Defaults to date of
+							build of the vessel if not set.&lt;/xs:documentation&gt;
+                &lt;/xs:annotation&gt;
+            &lt;/xs:attribute&gt;
+        &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childElements" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Elements:</b></td>
+            </tr>
+            <tr id="childElements_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Min Occurs</td>
+                        <td class="last">Max Occurs</td>
+                     </tr>
+                     <tr>
+                        <td class="first">OuterContour</td>
+                        <td><a href="outercontour.html">OuterContour</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">InnerContour</td>
+                        <td><a href="innercontour.html">InnerContour</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ExpandedOuterContour</td>
+                        <td><a href="expandedoutercontour.html">ExpandedOuterContour</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">ExpandedInnerContour</td>
+                        <td><a href="expandedinnercontour.html">ExpandedInnerContour</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">unbounded</td>
+                     </tr>
+                     <tr>
+                        <td class="first">Mesh</td>
+                        <td><a href="mesh.html">Mesh</a></td>
+                        <td class="mid">0</td>
+                        <td class="last">(1)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">id</td>
+                        <td><a href="id.html">id</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">name</td>
+                        <td><a href="name.html">name</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">memberId</td>
+                        <td><a href="memberid1.html">memberId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">strake</td>
+                        <td><a href="strake.html">strake</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">number</td>
+                        <td><a href="number.html">number</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">side</td>
+                        <td><a href="side2.html">side</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">thickness</td>
+                        <td><a href="thickness.html">thickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">replacementThickness</td>
+                        <td><a href="replacementthickness.html">replacementThickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">builtThickness</td>
+                        <td><a href="builtthickness.html">builtThickness</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">maxDiminution</td>
+                        <td><a href="maxdiminution.html">maxDiminution</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">steelRenewal</td>
+                        <td><a href="steelrenewal.html">steelRenewal</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">coatingRenewal</td>
+                        <td><a href="coatingrenewal.html">coatingRenewal</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">materialId</td>
+                        <td><a href="materialid.html">materialId</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">installationDate</td>
+                        <td><a href="installationdate.html">installationDate</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul><li><a href="hullconditionobject.html">HullConditionObject</a><ul><li><a href="plategeometry.html">PlateGeometry</a><ul>
+                     <li><b><i>Plate</i></b></li>
+                     <ul>
+                        <li><a href="plate1.html">Plate</a></li>
+                     </ul></ul></li></ul></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="plate1.html">Plate</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

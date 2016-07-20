@@ -1,0 +1,194 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item ClassParameters in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('ComplexType', 'classparameters1');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>ComplexType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>ClassParameters</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-sdt_xsd.html">hcm-sdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Abstract</b></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>Information that specifies design and intended performance characteristics of the ship in accordance with classification society rules and statutory regulations (see ISO
+10303-218, section 4.2.36).</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap">
+                     <area shape="rect" coords="323,407,607,487" href="scantlingsdraught.html" alt="Drilldown into scantlingsDraught"></area>
+                     <area shape="rect" coords="323,330,625,400" href="lenghtclass.html" alt="Drilldown into lenghtClass"></area>
+                     <area shape="rect" coords="323,253,612,323" href="lengthsolas.html" alt="Drilldown into lengthSolas"></area>
+                     <area shape="rect" coords="323,175,609,245" href="designspeedastern.html" alt="Drilldown into designSpeedAstern"></area>
+                     <area shape="rect" coords="323,98,609,168" href="designspeedahead.html" alt="Drilldown into designSpeedAhead"></area>
+                     <area shape="rect" coords="323,1,618,91" href="blockcoefficientclass.html" alt="Drilldown into blockCoefficientClass"></area></map><img src="images/classparameters1.png" border="0" alt="XSD Diagram of ClassParameters" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:complexType name="ClassParameters"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation&gt;Information that specifies design and intended performance characteristics of the ship in accordance with classification society rules and statutory regulations (see ISO
+				10303-218, section 4.2.36).&lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:attribute name="blockCoefficientClass" type="positiveValue" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The ratio of the moulded displacement volume to the volume of a block that has its length equal to the length class, its breadth equal to the moulded breadth and its depth equal
+					to the scantlings draught (see ISO 10303-218, section 4.2.32.1).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="designSpeedAhead" type="positiveValue"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The forward speed at which the ship is designed to operate (see ISO 10303-218, section 4.2.32.2).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="designSpeedAstern" type="positiveValue"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The reverse speed at which the ship is designed to operate (see ISO 10303-218, section 4.2.32.3).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="lengthSolas" type="positiveValue" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;A length measurement for the ship measured in accordance with IMO IC110E (see ISO 10303-218, section 4.2.32.5).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="lenghtClass" type="positiveValue" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;A length measurement for the ship that is defined in classification society rules (see ISO 10303-218, section 4.2.32.4).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+    &lt;xs:attribute name="scantlingsDraught" type="positiveValue" use="required"&gt;
+        &lt;xs:annotation&gt;
+            &lt;xs:documentation&gt;The summer load draught used by the classification society in its calculations for structural integrity and strength (see ISO 10303-218, section 4.2.32.6).&lt;/xs:documentation&gt;
+        &lt;/xs:annotation&gt;
+    &lt;/xs:attribute&gt;
+&lt;/xs:complexType&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="childAttributes" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Child Attributes:</b></td>
+            </tr>
+            <tr id="childAttributes_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Name</td>
+                        <td>Type</td>
+                        <td class="mid">Default Value</td>
+                        <td class="last">Use</td>
+                     </tr>
+                     <tr>
+                        <td class="first">blockCoefficientClass</td>
+                        <td><a href="blockcoefficientclass.html">blockCoefficientClass</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">designSpeedAhead</td>
+                        <td><a href="designspeedahead.html">designSpeedAhead</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">designSpeedAstern</td>
+                        <td><a href="designspeedastern.html">designSpeedAstern</a></td>
+                        <td class="mid"></td>
+                        <td class="last">(Optional)</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lengthSolas</td>
+                        <td><a href="lengthsolas.html">lengthSolas</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">lenghtClass</td>
+                        <td><a href="lenghtclass.html">lenghtClass</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                     <tr>
+                        <td class="first">scantlingsDraught</td>
+                        <td><a href="scantlingsdraught.html">scantlingsDraught</a></td>
+                        <td class="mid"></td>
+                        <td class="last">Required</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="derivationTree" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Derivation Tree:</b></td>
+            </tr>
+            <tr id="derivationTree_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><b><i>ClassParameters</i></b></li>
+                     <ul>
+                        <li><a href="classparameters.html">ClassParameters</a></li>
+                     </ul>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="references" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>References:</b></td>
+            </tr>
+            <tr id="references_body_id">
+               <td width="120px;"></td>
+               <td><a href="classparameters.html">ClassParameters</a></td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs for schema item contentType in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link rel="stylesheet" type="text/css" href="styles/site.css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Attribute', 'contenttype');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Definition Type:</b></td>
+               <td>Attribute</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Name:</b></td>
+               <td>contentType</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Type:</b></td>
+               <td>string:http://www.w3.org/2001/XMLSchema</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Containing Schema:</b></td>
+               <td><a href="hcm-pdt_xsd.html">hcm-pdt.xsd</a></td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>ContentType</b></td>
+               <td>Restriction</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Use</b></td>
+               <td>(Optional)</td>
+            </tr>
+            <tr>
+               <td class="label" width="120px;"><b>Documentation:</b></td>
+               <td><pre>The content type denotes the type of content of the external document as defined by MIME standard. MIME (Multipurpose Internet Mail Extensions) is an Internet standard for describes message
+    content types.
+MIME messages can contain text, images, audio, video, and other application-specific data.
+Official MIME info is provided by the Internet Engineering Task Force (IETF) in the following documents:
+
+        RFC-822 Standard for ARPA Internet text messages
+        RFC-2045 MIME Part 1: Format of Internet Message Bodies
+        RFC-2046 MIME Part 2: Media Types
+        RFC-2047 MIME Part 3: Header Extensions for Non-ASCII Text
+        RFC-2048 MIME Part 4: Registration Procedures
+        RFC-2049 MIME Part 5: Conformance Criteria and Examples</pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdDiagram" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Diagram:</b> 
+               </td>
+            </tr>
+            <tr id="xsdDiagram_body_id">
+               <td><map name="DiagramMap" id="DiagramMap"></map><img src="images/contenttype.png" border="0" alt="XSD Diagram of contentType" usemap="#DiagramMap"></img></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>&lt;xs:attribute name="contentType"&gt;
+    &lt;xs:annotation&gt;
+        &lt;xs:documentation xml:lang="en"&gt;
+            &lt;p&gt;The content type denotes the type of content of the external document as defined by MIME standard. MIME (Multipurpose Internet Mail Extensions) is an Internet standard for describes message
+						content types.&lt;/p&gt;
+            &lt;p&gt;MIME messages can contain text, images, audio, video, and other application-specific data.&lt;/p&gt;
+            &lt;p&gt;Official MIME info is provided by the Internet Engineering Task Force (IETF) in the following documents:
+						&lt;ul&gt;&lt;li&gt;RFC-822 Standard for ARPA Internet text messages&lt;/li&gt;
+                    &lt;li&gt;RFC-2045 MIME Part 1: Format of Internet Message Bodies&lt;/li&gt;
+                    &lt;li&gt;RFC-2046 MIME Part 2: Media Types&lt;/li&gt;
+                    &lt;li&gt;RFC-2047 MIME Part 3: Header Extensions for Non-ASCII Text&lt;/li&gt;
+                    &lt;li&gt;RFC-2048 MIME Part 4: Registration Procedures&lt;/li&gt;
+                    &lt;li&gt;RFC-2049 MIME Part 5: Conformance Criteria and Examples&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/p&gt;
+        &lt;/xs:documentation&gt;
+    &lt;/xs:annotation&gt;
+    &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+            &lt;xs:pattern value="\w+/\w+" /&gt;
+        &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:attribute&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="facets" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>Facets:</b></td>
+            </tr>
+            <tr id="facets_body_id">
+               <td width="120px;"></td>
+               <td class="childTableHolder">
+                  <table class="childTable">
+                     <tr class="header">
+                        <td class="label first">Facet</td>
+                        <td class="last">Value</td>
+                     </tr>
+                     <tr>
+                        <td class="label" width="120px;"><b>Pattern</b></td>
+                        <td>\w+/\w+</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/" rel="nofollow">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>

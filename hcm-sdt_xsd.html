@@ -1,0 +1,791 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Docs the schema hcm-sdt.xsd in OpenHCM Standard Documentation</title>
+      <!-- saved from url=(0014)about:internet -->
+      <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+      <link href="styles/site.css" rel="stylesheet" type="text/css"></link><script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script><script type="text/javascript" src="scripts/highlight.pack.js"></script><script type="text/javascript" src="scripts/xmlstudio.js"></script><script type="text/javascript" src="scripts/jquery.cookie.js"></script></head>
+   <body style="margin:10px"><script type="text/javascript">
+         <!--
+                            EnsureInFrame('Schema', 'hcm-sdt_xsd');
+                        --></script><div class="pageheader">
+         Documentation for OpenHCM Standard Documentation
+      </div>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" width="120px;"><b>Schema Name:</b></td>
+               <td>hcm-sdt.xsd</td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label"><img id="xsdCode" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>XSD Schema Code:</b> 
+               </td>
+            </tr>
+            <tr id="xsdCode_body_id">
+               <td><pre><code>
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" blockDefault="#all" version="2.0"&gt;
+	&lt;xs:include schemaLocation="hcm-pdt.xsd"/&gt;
+	&lt;xs:complexType name="ShipData"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;
+				&lt;p&gt;Collects generic information about a ship, which can be used in different data models for different purposes. The data is structured in "data sections", which are groups of related data.&lt;/p&gt;
+				&lt;p&gt;The most of child elements of
+					&lt;code&gt;ShipData&lt;/code&gt;are defined as data types (complex types) of the same name correspondingly.&lt;/p&gt;
+				&lt;p&gt;The child element
+					&lt;code&gt;ShipDocuments&lt;/code&gt;however is defined as a sequence of zero to many elements Document of type
+					&lt;code&gt;ExternalDocument&lt;/code&gt;. This data construct can be used to attach additional information about the vessel, such as pictures, drawings or certificates.&lt;/p&gt;
+			&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Designation" type="ShipDesignation"/&gt;
+			&lt;xs:element name="MainDimensions" type="MainDimensions" minOccurs="0"/&gt;
+			&lt;xs:element name="FrameTable" type="LongitudinalFrameTable" minOccurs="0"/&gt;
+			&lt;xs:element name="ShipyardData" type="ShipyardData" minOccurs="0"/&gt;
+			&lt;xs:element name="OwnerData" type="OwnerData" minOccurs="0"/&gt;
+			&lt;xs:element name="ClassData" type="ClassData" minOccurs="0"/&gt;
+			&lt;xs:element name="StatutoryData" type="StatutoryData" minOccurs="0"/&gt;
+			&lt;xs:element name="HullForm" type="HullForm" minOccurs="0"/&gt;
+			&lt;xs:element name="TonnageData" type="TonnageData" minOccurs="0"/&gt;
+			&lt;xs:element name="Attachments" type="DocumentReferences" minOccurs="0"/&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="comment" type="xs:string"/&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="ShipDesignation"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The different types of identification given to the ship in order that it can be categorised by any shipping related organisation. It contains the minimal information which might
+				be available about the ship.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="shipName" type="xs:string" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The name of the ship assigned by the owner.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="callSign" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The unique lifecycle identifier assigned to the ship by the flag state for radio communication.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="numberIMO" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;
+					&lt;p&gt;A unique identification of a vessel according to IMO resolution A.600(15). It is made of the three letters “IMO” in front of the Lloyd’s Register number. This is a unique seven digit number that
+						is assigned to propelled, sea-going merchant ships of 100 GT and above upon keel laying (with some exceptions), see:
+						&lt;ul&gt;
+							&lt;li&gt;IACS Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build, 1996&lt;/li&gt;
+							&lt;li&gt;
+								&lt;a href="http://www.imo.org/Facilitation/mainframe.asp?topic_id=388"&gt;Information on IMO ship identification number scheme on the web site of the IMO (last visited: 2005-09-05)&lt;/a&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/p&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+			&lt;xs:simpleType&gt;
+				&lt;xs:restriction base="xs:string"&gt;
+					&lt;xs:pattern value="\d{7}"/&gt;
+				&lt;/xs:restriction&gt;
+			&lt;/xs:simpleType&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="shipType" type="vesselType"/&gt;
+		&lt;xs:attribute name="shipTypeName" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;To be used only when
+					&lt;code&gt;@shipType&lt;/code&gt;is
+					&lt;code&gt;user_defined&lt;/code&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;!--  previously: CarrierVessel --&gt;
+	&lt;xs:simpleType name="vesselType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;A description of the function, purpose or mission a ship is designed for (see ISO 10303-218, section 4.2.203). The
+				&lt;code&gt;VesselType&lt;/code&gt;defines a choice group containing various elements.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="barge"/&gt;
+			&lt;xs:enumeration value="barge_for_deck_loading"/&gt;
+			&lt;xs:enumeration value="barge_for_liquefied_gas"/&gt;
+			&lt;xs:enumeration value="barge_for_oil"/&gt;
+			&lt;xs:enumeration value="barge_pontoon"/&gt;
+			&lt;xs:enumeration value="bulk_carrier"/&gt;
+			&lt;xs:enumeration value="car_carrier"/&gt;
+			&lt;xs:enumeration value="car_ferry"/&gt;
+			&lt;xs:enumeration value="cargo_ship_carrying_passengers"/&gt;
+			&lt;xs:enumeration value="chemical_tanker"/&gt;
+			&lt;xs:enumeration value="chemical_tanker_type_1"/&gt;
+			&lt;xs:enumeration value="container_carrier"/&gt;
+			&lt;xs:enumeration value="cruise_liner"/&gt;
+			&lt;xs:enumeration value="dry_cargo_vessel"/&gt;
+			&lt;xs:enumeration value="ferry"/&gt;
+			&lt;xs:enumeration value="gas_carrier"/&gt;
+			&lt;xs:enumeration value="general_cargo_carrier"/&gt;
+			&lt;xs:enumeration value="highspeedcraft_cargo"/&gt;
+			&lt;xs:enumeration value="highspeedcraft_passenger"/&gt;
+			&lt;xs:enumeration value="hydrofoil"/&gt;
+			&lt;xs:enumeration value="liquefied_gas_tanker"/&gt;
+			&lt;xs:enumeration value="LNG_carrier"/&gt;
+			&lt;xs:enumeration value="LPG_carrier"/&gt;
+			&lt;xs:enumeration value="oil_tanker"/&gt;
+			&lt;xs:enumeration value="ore_carrier"/&gt;
+			&lt;xs:enumeration value="passenger_vessel"/&gt;
+			&lt;xs:enumeration value="product_tanker"/&gt;
+			&lt;xs:enumeration value="refrigerated_cargo_carrying_ship"/&gt;
+			&lt;xs:enumeration value="roro_vessel"/&gt;
+			&lt;xs:enumeration value="tanker_for_refrigerated_fruit_juice"/&gt;
+			&lt;xs:enumeration value="user_defined"/&gt;
+			&lt;xs:enumeration value="crane_vessel"/&gt;
+			&lt;xs:enumeration value="dredger"/&gt;
+			&lt;xs:enumeration value="drilling_vessel"/&gt;
+			&lt;xs:enumeration value="fire_fighter"/&gt;
+			&lt;xs:enumeration value="fishing_vessel"/&gt;
+			&lt;xs:enumeration value="floating_dock"/&gt;
+			&lt;xs:enumeration value="floating_hotel"/&gt;
+			&lt;xs:enumeration value="FPGO"/&gt;
+			&lt;xs:enumeration value="FPSO"/&gt;
+			&lt;xs:enumeration value="ice_breaker"/&gt;
+			&lt;xs:enumeration value="offshore_supply_vessel"/&gt;
+			&lt;xs:enumeration value="oil_production_and_storage_vessel"/&gt;
+			&lt;xs:enumeration value="oil_production_vessel"/&gt;
+			&lt;xs:enumeration value="oil_storage_vessel"/&gt;
+			&lt;xs:enumeration value="pilot_boat"/&gt;
+			&lt;xs:enumeration value="pipe_laying_vessel"/&gt;
+			&lt;xs:enumeration value="pusher"/&gt;
+			&lt;xs:enumeration value="reefer"/&gt;
+			&lt;xs:enumeration value="sealer"/&gt;
+			&lt;xs:enumeration value="shuttle_tanker"/&gt;
+			&lt;xs:enumeration value="stern_trawler"/&gt;
+			&lt;xs:enumeration value="supply_vessel"/&gt;
+			&lt;xs:enumeration value="tug"/&gt;
+			&lt;xs:enumeration value="well_stimulation_vessel"/&gt;
+			&lt;xs:enumeration value="aircraft_carrier"/&gt;
+			&lt;xs:enumeration value="auxiliary_oiler"/&gt;
+			&lt;xs:enumeration value="corvette"/&gt;
+			&lt;xs:enumeration value="cruiser"/&gt;
+			&lt;xs:enumeration value="destroyer"/&gt;
+			&lt;xs:enumeration value="fleet_auxiliary_vessel"/&gt;
+			&lt;xs:enumeration value="frigate"/&gt;
+			&lt;xs:enumeration value="landing_platform_dock"/&gt;
+			&lt;xs:enumeration value="landing_platform_helicopter"/&gt;
+			&lt;xs:enumeration value="mine_warfare_ship"/&gt;
+			&lt;xs:enumeration value="patrol_force_vessel"/&gt;
+			&lt;xs:enumeration value="service_craft"/&gt;
+			&lt;xs:enumeration value="submarine"/&gt;
+			&lt;xs:enumeration value="user_defined"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:complexType name="MainDimensions"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;This type defines the main shape parameters of the ship.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="lengthPerpendiculars" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;
+					&lt;h3&gt;Length between Perpendiculars (Lpp)&lt;/h3&gt;
+					&lt;p&gt;The length measured from the aft perpendicular to the forward perpendicular of the ship. The value is specified in meters (see ISO-10303-215, section 4.2.135.4).&lt;/p&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="lengthOverall" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;
+					&lt;h3&gt;Length overall (Loa)&lt;/h3&gt;
+					&lt;p&gt;The length overall of a ship is the extreme length measured from the foremost point to the aftermost point and expressed in meters.&lt;/p&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="mouldedBreadth" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The maximum breath of the ship amidships and at the design draught. The value expressed in meters (see ISO-10303-215, section 4.2.135.9).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="mouldedDepth" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The vertical distance above the baseline to the uppermost deck where the deck joins the side of the ship measured amidships and expressed in meters (see ISO-10303-215, section
+					4.2.135.10).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="designDraught" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The draught to which the ship has been designed to operate. (see ISO-10303-215, section 4.2.135.3).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="ShipyardData"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;An organization that designs, builds, maintains, and repairs ships. This type contains information about the ship, which is specific in the context of the shipyard, in which it
+				has been built.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence minOccurs="0"&gt;
+			&lt;xs:element name="ShipYard" type="Company"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;List of the yards incooperated in building this ship.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="projectName" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;An identifier for the ship that is assigned by the shipyard on receipt of an order, or tender, for a new ship (see ISO-10303-215, section 4.2.144.5).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="newBuildingID" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;An identifier for the ship that is assigned by the shipyard after an order has been confirmed (see ISO-10303-215, section 4.2.144.4).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="dateOfBuild" type="xs:date"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;According to IACS PR 11 [14] “the year and month at which the new construction survey process is completed shall be specified as the ‘Date of Build’. Where there is substantial
+					delay between completion of construction survey process and the ship commencing active service, the date of commissioning may be also specified”.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="OwnerData"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Provides information about the organisations that order, own and manage the ship (see ISO 10303-218, section 4.2.140).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence minOccurs="0"&gt;
+			&lt;xs:element name="ManagingCompany" type="Company" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;The organisation that is responsible for managing and operating the ship. (see ISO 10303-218, section 4.2.140.2).&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="OwningCompany" type="Company" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;The organization that legally owns the ship. (see ISO 10303-218, section 4.2.140.4).&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+			&lt;xs:element name="OrderingCompany" type="Company" minOccurs="0"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;The organisation that ordered the ship at a shipyard. (see ISO 10303-218, section 4.2.140.3).&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="ClassData"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The constructs relevant to the classification society.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence minOccurs="0"&gt;
+			&lt;xs:element name="ClassParameters" type="ClassParameters" minOccurs="0"/&gt;
+			&lt;xs:element name="ClassNotation" minOccurs="0"&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:attribute name="hull" type="xs:string"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation source="ISO-10303-218/Section_4.2.35.5" xml:lang="en"&gt;The notation given to the hull of the ship by the classification society as a result of its approval
+								activities done on the hull.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:attribute&gt;
+					&lt;xs:attribute name="machinery" type="xs:string"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation source="ISO-10303-218/Section_4.2.35.6" xml:lang="en"&gt;The notation given to the machinery on the ship by the classification society as a result of its approval
+								activities done on the machinery.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:attribute&gt;
+					&lt;xs:attribute name="iceClass" type="xs:string"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation source="ISO-10303-218/Section_4.2.35.8" xml:lang="en"&gt;The type of class notation given to the ship indicating the ice conditions in which the ship has been
+								approved to operate.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:attribute&gt;
+					&lt;xs:attribute name="serviceArea" type="xs:string"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation source="ISO-10303-218/Section_4.2.35.9" xml:lang="en"&gt;
+								&lt;p&gt;The area or route in which the ship operates.&lt;/p&gt;
+								&lt;p&gt;
+									&lt;b&gt;NOTE:&lt;/b&gt;This may include information about waterway, wave, weather and wind conditions.&lt;/p&gt;
+							&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:attribute&gt;
+					&lt;xs:attribute name="serviceFactor"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation source="ISO-10303-218/Section_4.2.35.10" xml:lang="en"&gt;The service area of the ship and the waves that occur in that area. The service factor should be in the
+								range of 0.5 to 1.0.&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+						&lt;xs:simpleType&gt;
+							&lt;xs:restriction base="xs:double"&gt;
+								&lt;xs:minInclusive value="0.5"/&gt;
+								&lt;xs:maxInclusive value="1.0"/&gt;
+							&lt;/xs:restriction&gt;
+						&lt;/xs:simpleType&gt;
+					&lt;/xs:attribute&gt;
+					&lt;xs:attribute name="additionalNotations" type="classNotations"/&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+		&lt;xs:attribute name="society" type="classSociety" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during current operation.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="societyName" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The common name of the class society relevant for operating the ship. Needs only to be specified when
+					&lt;code&gt;@society = 'OTHER'&lt;/code&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="newbuildingSociety" type="classSociety"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The name and organizational details of the classification society whose rules and regulations are being used to assess the ship during construction.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="newbuildingSocietyName" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The common name of the class society relevant for operating the ship. Needs only to be specified when
+					&lt;code&gt;@newbuildingSociety = 'OTHER'&lt;/code&gt;
+				&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="identification" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The classification society specific identifier to a ship.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="StatutoryData"&gt;
+		&lt;xs:attribute name="portRegistration" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The national home port of the ship. The port of registration lies within the jurisdiction of the flag state (see ISO 10303-215, section 4.2.142.5).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="flagState" type="xs:string"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The national authority with which the ship is registered (see ISO 10303-215, section 4.2.142.3).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="ClassParameters"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Information that specifies design and intended performance characteristics of the ship in accordance with classification society rules and statutory regulations (see ISO
+				10303-218, section 4.2.36).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="blockCoefficientClass" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The ratio of the moulded displacement volume to the volume of a block that has its length equal to the length class, its breadth equal to the moulded breadth and its depth equal
+					to the scantlings draught (see ISO 10303-218, section 4.2.32.1).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="designSpeedAhead" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The forward speed at which the ship is designed to operate (see ISO 10303-218, section 4.2.32.2).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="designSpeedAstern" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The reverse speed at which the ship is designed to operate (see ISO 10303-218, section 4.2.32.3).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="lengthSolas" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;A length measurement for the ship measured in accordance with IMO IC110E (see ISO 10303-218, section 4.2.32.5).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="lenghtClass" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;A length measurement for the ship that is defined in classification society rules (see ISO 10303-218, section 4.2.32.4).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="scantlingsDraught" type="positiveValue" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The summer load draught used by the classification society in its calculations for structural integrity and strength (see ISO 10303-218, section 4.2.32.6).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="TonnageData"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The information pertinent to the tonnage of the ship.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="tonnage" type="positiveValue"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;She numerical value resulting from the tonnage calculation (see ISO 10303-215, section 4.2.165.3).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="deadweight" type="positiveValue"&gt;
+			&lt;xs:annotation id="TonnageData_deadweight"&gt;
+				&lt;xs:documentation source="ISO-10303-215/Section_4.2.74" xml:lang="en"&gt;The weight of the passengers, crew, cargo, stores, ballast, fresh water, fuel oil, and other consumables being
+					carried by a ship (see ISO 10303-215, section 4.2.74).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="SpacingPosition"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation source="ISO-10303-218/Section_4.2.205" xml:lang="en"&gt;A location on one of the global coordinate axes of the ship that is used as a reference point for any geometrical
+				or structural item during the design and manufacture of the ship (see ISO 10303-215, section 4.2.153).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:attribute name="name" type="xs:string" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;A label that is used to identify the reference point (see ISO 10303-215, section 4.2.153.1).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+		&lt;xs:attribute name="coordinate" type="xs:double" use="required"&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The distance to the origin of the global coordinate system of the ship (see ISO 10303-215, section 4.2.153.2).&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+		&lt;/xs:attribute&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="LongitudinalFrameTable"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation source="ISO-10303-218/Section_4.2.91" xml:lang="en"&gt;
+				&lt;p&gt;Has positions that reference the location of frames that are located along the global X-axis.&lt;/p&gt;
+				&lt;p&gt;
+					&lt;b&gt;NOTE:&lt;/b&gt;Frames are used for the internal structure of the ship and they are structural elements. A ship can have more than 100 frames. The intersection curve between a frame and the hull moulded form is
+					a curve of transversal section through the hull of the ship.&lt;/p&gt;
+			&lt;/xs:documentation&gt;
+			&lt;xs:documentation source="ISO-10303-218/Section_4.2.207" xml:lang="en"&gt;A a collection of
+				&lt;code&gt;SpacingPosition&lt;/code&gt;objects that defines a list of reference points along one of the coordinate axes of the ship.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Position" type="SpacingPosition" maxOccurs="unbounded"/&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:simpleType name="FunctionalProperty"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;an enumeration of type xs:string which represents the denomination of the functional property or role of an structural member of the ship. The values are based on STEP Application
+				Protocol 218 (see ISO 10303-218, section 4.2.237.2).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="ACCOMODATION_DECK"/&gt;
+			&lt;xs:enumeration value="BILGE"/&gt;
+			&lt;xs:enumeration value="BOTTOM_SHELL"/&gt;
+			&lt;xs:enumeration value="BRACKET"/&gt;
+			&lt;xs:enumeration value="BRACING"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Tubular structure used in offshore platforms connecting columns, pontoons and main deck.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="BULKHEAD"/&gt;
+			&lt;xs:enumeration value="CHAIN_LOCKER"/&gt;
+			&lt;xs:enumeration value="COLLISION_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="COLUMN"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Structure used in offshore platforms that links the main deck to the pontoons. It usually has a large diameter. Its shape can be squared or cylindrical, sometime slanted.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="CROSS_TIE"/&gt;
+			&lt;xs:enumeration value="DECK"/&gt;
+			&lt;xs:enumeration value="DECK_BEAM"/&gt;
+			&lt;xs:enumeration value="DECK_HOUSE"/&gt;
+			&lt;xs:enumeration value="DECK_IN_SUPERSTRUCTURE"/&gt;
+			&lt;xs:enumeration value="DUCT_KEEL"/&gt;
+			&lt;xs:enumeration value="ENGINE_FOUNDATION"/&gt;
+			&lt;xs:enumeration value="FLOOR"/&gt;
+			&lt;xs:enumeration value="FORECASTLE_DECK"/&gt;
+			&lt;xs:enumeration value="FRAME"/&gt;
+			&lt;xs:enumeration value="GIRDER"/&gt;
+			&lt;xs:enumeration value="HATCH_COVER"/&gt;
+			&lt;xs:enumeration value="HATCHWAY_COAMING"/&gt;
+			&lt;xs:enumeration value="HATCHWAY_ENDCOAMING"/&gt;
+			&lt;xs:enumeration value="HATCHWAY_SIDECOAMING"/&gt;
+			&lt;xs:enumeration value="HOPPER_PLATE"/&gt;
+			&lt;xs:enumeration value="HOPPER_LONGITUDINAL_PANEL"/&gt;
+			&lt;xs:enumeration value="HOPPER_TRANSVERSE_WEB_FRAME"/&gt;
+			&lt;xs:enumeration value="INNER_BOTTOM"/&gt;
+			&lt;xs:enumeration value="INNER_SHELL"/&gt;
+			&lt;xs:enumeration value="KEEL"/&gt;
+			&lt;xs:enumeration value="LONGITUDINAL_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="LONGITUDINAL_PLATE"/&gt;
+			&lt;xs:enumeration value="LONGITUDINAL_GIRDER"/&gt;
+			&lt;xs:enumeration value="LOWER_BOOM"/&gt;
+			&lt;xs:enumeration value="MACHINERY_CASING"/&gt;
+			&lt;xs:enumeration value="MAIN_DECK"/&gt;
+			&lt;xs:enumeration value="NAVIGATION_DECK"/&gt;
+			&lt;xs:enumeration value="OUTER_SHELL"/&gt;
+			&lt;xs:enumeration value="PLATFORM_DECK"/&gt;
+			&lt;xs:enumeration value="PONTOON"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Floating structure used in offshore platforms, usually ship-shaped and connected to the columns.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="POOP_DECK"/&gt;
+			&lt;xs:enumeration value="SHEER_STRAKE"/&gt;
+			&lt;xs:enumeration value="SIDE_SHELL"/&gt;
+			&lt;xs:enumeration value="STOOL"/&gt;
+			&lt;xs:enumeration value="STRENGTH_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="STRENGTH_DECK"/&gt;
+			&lt;xs:enumeration value="STRINGER"/&gt;
+			&lt;xs:enumeration value="SUPERSTRUCTURE"/&gt;
+			&lt;xs:enumeration value="SUPERSTRUCTURE_AFT_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="SUPERSTRUCTURE_FRONT_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="SUPERSTRUCTURE_SIDE_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="TANK_BOTTOM"/&gt;
+			&lt;xs:enumeration value="TANK_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="TANK_SIDE"/&gt;
+			&lt;xs:enumeration value="TANK_TOP"/&gt;
+			&lt;xs:enumeration value="TOPSIDE_STRUCTURE"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Structure used in offshore platforms located ontop the columns. It includes, e.g. main deck, derrick structure, helideck, living quarters, etc..&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="TRANSOM"/&gt;
+			&lt;xs:enumeration value="TRANSVERSAL_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="TRANSVERSE_PLATE"/&gt;
+			&lt;xs:enumeration value="TRANSVERSE_WEB_FRAME"/&gt;
+			&lt;xs:enumeration value="UPPER_BOOM"/&gt;
+			&lt;xs:enumeration value="USER_DEFINED"/&gt;
+			&lt;xs:enumeration value="WALL"/&gt;
+			&lt;xs:enumeration value="WASH_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="WEATHER_DECK"/&gt;
+			&lt;xs:enumeration value="WEB_FRAME"/&gt;
+			&lt;xs:enumeration value="WING_BULKHEAD"/&gt;
+			&lt;xs:enumeration value="WING_LONGITUDINAL_PANEL"/&gt;
+			&lt;xs:enumeration value="WING_TRANSVERSE_WEB_FRAME"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:complexType name="OffsetGeometry"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;Provides the mechanisms to represent individual cross sections of the hull shape of a ship at specific frame positions in a simplified way (Polyline representation of the cross section geometry)
+				are represented by
+				&lt;code&gt;Frame&lt;/code&gt;elements&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:annotation&gt;
+				&lt;xs:documentation&gt;The name of the cross section.&lt;/xs:documentation&gt;
+			&lt;/xs:annotation&gt;
+			&lt;xs:element name="Frame" minOccurs="0" maxOccurs="unbounded"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;A set of
+						&lt;code&gt;Branch&lt;/code&gt;elements of type
+						&lt;code&gt;Polyline2D&lt;/code&gt;.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+				&lt;xs:complexType&gt;
+					&lt;xs:sequence&gt;
+						&lt;xs:element name="Branch" type="Polyline2D" maxOccurs="unbounded"/&gt;
+					&lt;/xs:sequence&gt;
+					&lt;xs:attribute name="name" type="xs:string" use="optional"/&gt;
+					&lt;xs:attribute name="xPosition" type="xs:double" use="required"&gt;
+						&lt;xs:annotation&gt;
+							&lt;xs:documentation&gt;The coordinate value along the longitudinal axis of the ship (frame coordinate).&lt;/xs:documentation&gt;
+						&lt;/xs:annotation&gt;
+					&lt;/xs:attribute&gt;
+				&lt;/xs:complexType&gt;
+			&lt;/xs:element&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="Orientations"&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Direction" type="Direction" minOccurs="2" maxOccurs="unbounded"/&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:complexType name="HullForm"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;
+				&lt;p&gt;The data construct to represent of the hull shape of a ship. The locally defined elements
+					&lt;code&gt;Sections&lt;/code&gt;of type
+					&lt;code&gt;OffsetGeometry&lt;/code&gt;represent the hull geometry.&lt;/p&gt;
+				&lt;p&gt;
+					&lt;b&gt;Note:&lt;/b&gt;Currently only the simplified representation by mean of offset geometry is provided. However by using the choice mechanism of XML Schema the type can be extended to support other kind of
+					representations as required.&lt;/p&gt;
+			&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:sequence&gt;
+			&lt;xs:element name="Sections" type="OffsetGeometry"/&gt;
+		&lt;/xs:sequence&gt;
+	&lt;/xs:complexType&gt;
+	&lt;xs:simpleType name="partType"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="plate"/&gt;
+			&lt;xs:enumeration value="stiffener"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="partTypes"&gt;
+		&lt;xs:list itemType="partType"/&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="compartmentPurpose"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="Cargo"/&gt;
+			&lt;xs:enumeration value="Ballast"/&gt;
+			&lt;xs:enumeration value="Freshwater"/&gt;
+			&lt;xs:enumeration value="Fuel"/&gt;
+			&lt;xs:enumeration value="Machinery"/&gt;
+			&lt;xs:enumeration value="Void"/&gt;
+			&lt;xs:enumeration value="Other"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Storage of equipment, e.g. ropes&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="Lube"/&gt;
+			&lt;xs:enumeration value="Passageway"/&gt;
+			&lt;xs:enumeration value="Access"/&gt;
+			&lt;xs:enumeration value="Hatchcover"/&gt;
+			&lt;xs:enumeration value="Miscellaneous"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Storage of miscellaneous fluids, e.g.sewage&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="stiffenerType"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="L"/&gt;
+			&lt;xs:enumeration value="T"/&gt;
+			&lt;xs:enumeration value="HP"/&gt;
+			&lt;xs:enumeration value="FB"/&gt;
+			&lt;xs:enumeration value="I"/&gt;
+			&lt;xs:enumeration value="C"/&gt;
+			&lt;xs:enumeration value="RHS"/&gt;
+			&lt;xs:enumeration value="O"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="stiffenerDetail"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The represents the part of the profile on which the MeasurementPoint is located “web” or “flange”.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="web"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Applies to all profile types, including type O.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="flange"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Applies to profiles of type L, T, I, C, and RHS.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="lower_flange"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Applies to profiles of type I, C, and RHS.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="positionType"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The position of a measurement reading, in case there is no geometry information.&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="aft"/&gt;
+			&lt;xs:enumeration value="forward"/&gt;
+			&lt;xs:enumeration value="lower"/&gt;
+			&lt;xs:enumeration value="mid"/&gt;
+			&lt;xs:enumeration value="upper"/&gt;
+			&lt;xs:enumeration value="zone A"/&gt;
+			&lt;xs:enumeration value="zone B"/&gt;
+			&lt;xs:enumeration value="zone C"/&gt;
+			&lt;xs:enumeration value="zone D"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="stiffenerOrientation"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="left"/&gt;
+			&lt;xs:enumeration value="right"/&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="locationType"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="C"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Part is located at center plane of the ship. Typically calculated from center of bounding box.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="P"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Part is located at portside of the ship. Typically calculated from center of bounding box.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="S"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;Part is located at starboard side of the ship. Typically calculated from center of bounding box.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="statusType"&gt;
+		&lt;xs:restriction base="xs:string"&gt;
+			&lt;xs:enumeration value="in progress"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;An activity that has started but is not finished yet.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="complete"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;An activity that is complete. Possibly waiting for approval.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="approved"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;An activity that is complete and approved.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+			&lt;xs:enumeration value="planned"&gt;
+				&lt;xs:annotation&gt;
+					&lt;xs:documentation&gt;An activity that is planned but not yot beginned.&lt;/xs:documentation&gt;
+				&lt;/xs:annotation&gt;
+			&lt;/xs:enumeration&gt;
+		&lt;/xs:restriction&gt;
+	&lt;/xs:simpleType&gt;
+	&lt;xs:simpleType name="classNotations"&gt;
+		&lt;xs:annotation&gt;
+			&lt;xs:documentation&gt;The notations given to the hull and machinery of the Ship by the classification society as a result of its approval activities during the design, manufacture and in-service
+				maintenance of the ship (see ISO 10303-218, section 4.2.35).&lt;/xs:documentation&gt;
+		&lt;/xs:annotation&gt;
+		&lt;xs:list itemType="xs:string"/&gt;
+	&lt;/xs:simpleType&gt;
+&lt;/xs:schema&gt;</code></pre></td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="ComplexType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>ComplexTypes:</b></td>
+            </tr>
+            <tr id="ComplexType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="classdata.html">ClassData</a></li>
+                     <li><a href="classparameters1.html">ClassParameters</a></li>
+                     <li><a href="hullform.html">HullForm</a></li>
+                     <li><a href="longitudinalframetable.html">LongitudinalFrameTable</a></li>
+                     <li><a href="maindimensions.html">MainDimensions</a></li>
+                     <li><a href="offsetgeometry.html">OffsetGeometry</a></li>
+                     <li><a href="orientations1.html">Orientations</a></li>
+                     <li><a href="ownerdata.html">OwnerData</a></li>
+                     <li><a href="shipdata1.html">ShipData</a></li>
+                     <li><a href="shipdesignation.html">ShipDesignation</a></li>
+                     <li><a href="shipyarddata1.html">ShipyardData</a></li>
+                     <li><a href="spacingposition.html">SpacingPosition</a></li>
+                     <li><a href="statutorydata1.html">StatutoryData</a></li>
+                     <li><a href="tonnagedata1.html">TonnageData</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <table cellpadding="0" cellspacing="0" class="mainHelp2">
+         <tbody>
+            <tr>
+               <td class="label" colspan="2"><img id="SimpleType" class="expand" height="11" width="11" src="images/minus.gif" alt="Collapse"></img> <b>SimpleTypes:</b></td>
+            </tr>
+            <tr id="SimpleType_body_id">
+               <td width="120px;"></td>
+               <td>
+                  <ul>
+                     <li><a href="functionalproperty.html">FunctionalProperty</a></li>
+                     <li><a href="classnotations.html">classNotations</a></li>
+                     <li><a href="compartmentpurpose.html">compartmentPurpose</a></li>
+                     <li><a href="locationtype.html">locationType</a></li>
+                     <li><a href="parttype.html">partType</a></li>
+                     <li><a href="parttypes.html">partTypes</a></li>
+                     <li><a href="positiontype.html">positionType</a></li>
+                     <li><a href="statustype.html">statusType</a></li>
+                     <li><a href="stiffenerdetail.html">stiffenerDetail</a></li>
+                     <li><a href="stiffenerorientation.html">stiffenerOrientation</a></li>
+                     <li><a href="stiffenertype.html">stiffenerType</a></li>
+                     <li><a href="vesseltype.html">vesselType</a></li>
+                  </ul>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="pagefooter">
+         			Documentation for OpenHCM Standard Documentation<br/>
+         Generated using 
+         <a href="http://www.liquid-technologies.com/">Liquid XML 2015 Designer Edition 13.0.14.5873</a></div>
+   </body>
+</html>
