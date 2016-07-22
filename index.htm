@@ -1,0 +1,1587 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 14 (filtered)">
+<title>Business Process Analysis and Optimisation</title>
+
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"Monotype Sorts";
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+h1
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:21.6pt;
+	text-align:justify;
+	text-indent:-21.6pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";}
+h2
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:28.8pt;
+	text-align:justify;
+	text-indent:-28.8pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";}
+h3
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:36.0pt;
+	text-align:justify;
+	text-indent:-36.0pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:normal;
+	font-style:italic;}
+h4
+	{mso-style-link:"Titre 4 Car";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:43.2pt;
+	text-align:justify;
+	text-indent:-43.2pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:normal;
+	font-style:italic;}
+h5
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:50.4pt;
+	text-indent:-50.4pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:normal;
+	font-style:italic;}
+h6
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:57.6pt;
+	text-indent:-57.6pt;
+	font-size:11.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:normal;
+	font-style:italic;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:64.8pt;
+	text-indent:-64.8pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:79.2pt;
+	text-indent:-79.2pt;
+	font-size:9.0pt;
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:12.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-variant:small-caps;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:24.0pt;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCommentText, li.MsoCommentText, div.MsoCommentText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-style:italic;}
+p.MsoTof, li.MsoTof, div.MsoTof
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:22.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-22.0pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-variant:small-caps;}
+span.MsoFootnoteReference
+	{vertical-align:super;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-18.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Corps de texte Car";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoBlockText, li.MsoBlockText, div.MsoBlockText
+	{margin-top:0cm;
+	margin-right:72.0pt;
+	margin-bottom:6.0pt;
+	margin-left:72.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	background:navy;
+	font-size:12.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Courier New";}
+p.MsoCommentSubject, li.MsoCommentSubject, div.MsoCommentSubject
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+span.CorpsdetexteCar
+	{mso-style-name:"Corps de texte Car";
+	mso-style-link:"Corps de texte";}
+span.Titre4Car
+	{mso-style-name:"Titre 4 Car";
+	mso-style-link:"Titre 4";
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+p.Reference, li.Reference, div.Reference
+	{mso-style-name:Reference;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-18.0pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.Normalparagraph, li.Normalparagraph, div.Normalparagraph
+	{mso-style-name:"Normal paragraph";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	text-indent:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.contents, li.contents, div.contents
+	{mso-style-name:contents;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:0cm;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";
+	font-weight:bold;}
+p.CAPBULLETCharChar, li.CAPBULLETCharChar, div.CAPBULLETCharChar
+	{mso-style-name:"CAP BULLET Char Char";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:14.2pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.2pt;
+	punctuation-wrap:simple;
+	text-autospace:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.IccasBody, li.IccasBody, div.IccasBody
+	{mso-style-name:IccasBody;
+	margin-top:4.0pt;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	text-align:justify;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.IccasFigure, li.IccasFigure, div.IccasFigure
+	{mso-style-name:IccasFigure;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:2.0cm;
+	text-indent:-2.0cm;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	font-style:italic;}
+p.name, li.name, div.name
+	{mso-style-name:name;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#FF9933;}
+p.glossaryterm, li.glossaryterm, div.glossaryterm
+	{mso-style-name:glossaryterm;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#003366;
+	font-weight:bold;}
+p.footer, li.footer, div.footer
+	{mso-style-name:footer;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:8.0pt;
+	font-family:"Times New Roman","serif";}
+p.group, li.group, div.group
+	{mso-style-name:group;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.type, li.type, div.type
+	{mso-style-name:type;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.occurs, li.occurs, div.occurs
+	{mso-style-name:occurs;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.fixed, li.fixed, div.fixed
+	{mso-style-name:fixed;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.constraint, li.constraint, div.constraint
+	{mso-style-name:constraint;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.inherited, li.inherited, div.inherited
+	{mso-style-name:inherited;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.newfields, li.newfields, div.newfields
+	{mso-style-name:newfields;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.other, li.other, div.other
+	{mso-style-name:other;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.sctag, li.sctag, div.sctag
+	{mso-style-name:sctag;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.sccontent, li.sccontent, div.sccontent
+	{mso-style-name:sccontent;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.comment, li.comment, div.comment
+	{mso-style-name:comment;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.targetns
+	{mso-style-name:targetns;
+	color:#0066CC;
+	font-weight:bold;}
+span.caption
+	{mso-style-name:caption;}
+span.caption1
+	{mso-style-name:caption1;
+	font-weight:bold;}
+p.group1, li.group1, div.group1
+	{mso-style-name:group1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#999999;}
+p.type1, li.type1, div.type1
+	{mso-style-name:type1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#999999;}
+p.occurs1, li.occurs1, div.occurs1
+	{mso-style-name:occurs1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#999999;}
+p.fixed1, li.fixed1, div.fixed1
+	{mso-style-name:fixed1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#006633;
+	font-weight:bold;}
+p.constraint1, li.constraint1, div.constraint1
+	{mso-style-name:constraint1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#999999;}
+p.inherited1, li.inherited1, div.inherited1
+	{mso-style-name:inherited1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#666666;}
+p.newfields1, li.newfields1, div.newfields1
+	{mso-style-name:newfields1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.other1, li.other1, div.other1
+	{mso-style-name:other1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#336699;
+	font-style:italic;}
+p.sctag1, li.sctag1, div.sctag1
+	{mso-style-name:sctag1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#993333;}
+p.sccontent1, li.sccontent1, div.sccontent1
+	{mso-style-name:sccontent1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:black;
+	font-weight:bold;}
+p.comment1, li.comment1, div.comment1
+	{mso-style-name:comment1;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:#999999;}
+span.sctag2
+	{mso-style-name:sctag2;}
+span.sccontent2
+	{mso-style-name:sccontent2;}
+span.type2
+	{mso-style-name:type2;}
+span.occurs2
+	{mso-style-name:occurs2;}
+span.group2
+	{mso-style-name:group2;}
+p.sourcecode, li.sourcecode, div.sourcecode
+	{mso-style-name:sourcecode;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	background:#F3F3F3;
+	border:none;
+	padding:0cm;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	color:black;}
+span.constraint2
+	{mso-style-name:constraint2;}
+p.Appendix, li.Appendix, div.Appendix
+	{mso-style-name:Appendix;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:18.0pt;
+	margin-left:17.85pt;
+	text-align:justify;
+	text-indent:-17.85pt;
+	page-break-before:always;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Arial","sans-serif";}
+ /* Page Definitions */
+ @page WordSection1
+	{size:21.0cm 842.0pt;
+	margin:69.25pt 3.0cm 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+@page WordSection2
+	{size:595.3pt 841.9pt;
+	margin:70.85pt 70.85pt 2.0cm 70.85pt;}
+div.WordSection2
+	{page:WordSection2;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=blue>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='font-size:24.0pt;font-family:"Calibri Light","sans-serif"'>OpenHCM
+Description</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-GB
+style='font-size:24.0pt;font-family:"Calibri Light","sans-serif"'>&nbsp;</span></b></p>
+
+<h1><a name="_Toc285539218"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>S</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>ummary</span></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='font-size:11.0pt;font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>One of the main objectives of
+the CAS Project is to create an open data exchange standard that can be used widely
+by all stakeholders involved in the Process &quot;<i>Hull Condition Monitoring
+and Assessment</i>&quot; (HCMA), such as Classification Societies, Measurement
+Companies, Ship and Cargo Owners (e.g. Oil Majors) and Maritime Authorities
+(Flag States, IMO, EMSA, National Coast Guards, etc.). </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>This document contains the
+specification of an industry specific XML-vocabulary called OpenHCM (Open Hull
+Condition Model). OpenHCM is an open Data Model for structuring information concerning
+the condition of the ship’s hull structure, the focus within the CAS project
+was on thickness measurements. The model can be extended to other survey
+findings (e.g. cracks, deformations, coating condition, etc.) on ship
+structural elements.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>A major design goal of the OpenHCM
+is that it shall not be necessary to enter more information in preparation and execution
+of measurements than today. The information content of an OpenHCM file can therefore
+reflect the amount of information contained today in a typical thickness
+measurement report. On the other hand, a 3D geometrical model of a ship can
+simplify assessment of measurement results when used as a means of visualization.
+Such a model can be stored in OpenHCM format, but again in a very simple form.</span><span
+style='font-family:"Calibri Light","sans-serif"'> <span lang=EN-GB>In contrast
+to a full structural model of the ship, a data model for HCMA needs no
+topological information (connectivity of plates) and only low precision with
+respect to the exact location of plate boundaries. OpenHCM is therefore held
+simple as compared to structural models such as STEP-AP218: its complexity is tailored
+to the HCMA process.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>OpenHCM shall provide support
+for all phases of HCMA viz. <i>Planning</i>, <i>Recording</i>, <i>Reporting</i>
+and <i>Assessment</i>. The chosen XML-based approach ensures extensibility in
+future versions of the data model, which will need to be adapted to new
+available methodology for ship inspections (e.g. robotics), new regulatory
+requirements (IMO, EMSA, IACS) as well as to innovations in Information Technology
+in both soft- and hardware that will have an impact on the process. In spite of
+possible extensions, it shall always be possible to use OpenHCM in a minimal
+way, i.e. by storing only that information about the ship structure and the
+gaugings, which can be captured during today's typical measurement campaign.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>OpenHCM is implemented in form
+of a set of Schema Documents based on the W3C XML Schema Specification </span><span
+style='font-family:"Calibri Light","sans-serif"'>[1]</span><span
+style='font-family:"Calibri Light","sans-serif"'>, </span><span
+style='font-family:"Calibri Light","sans-serif"'>[2]</span><span
+style='font-family:"Calibri Light","sans-serif"'>, </span><span
+style='font-family:"Calibri Light","sans-serif"'>[3]</span><span
+style='font-family:"Calibri Light","sans-serif"'>.</span></p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Calibri Light","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<h1><a name="_Toc285539219"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Introduction (non
+normative)</span></a></h1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>The <i>Open Hull Condition Data
+Model</i> (OpenHCM) enables capturing all information required for determining
+and </span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>analysing</span><span
+style='font-family:"Calibri Light","sans-serif"'> the corrosion status of a
+vessel as required in current mandatory regulations<a href="#_ftn1"
+name="_ftnref1" title=""><span class=MsoFootnoteReference><span
+class=MsoFootnoteReference><span style='font-size:12.0pt;font-family:"Calibri Light","sans-serif"'>[1]</span></span></span></a>.
+It </span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>includes
+constructs for simple geometry information of plates and profiles. This simple
+geometry </span><span style='font-family:"Calibri Light","sans-serif"'>information</span><span
+style='font-family:"Calibri Light","sans-serif"'> <span lang=EN-GB>enables the
+graphical representation of the structures for both data collection and
+visualisation of the measurements and their associations with plates and
+profiles of a full structural model as needed, e.g. for strength analysis. OpenHCM
+also provides support for the use of &quot;incomplete models&quot; as well as
+for the incremental definition/population of the model data.</span></span></p>
+
+<h2><a name="_Toc285539220"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2.1
+</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Simplified
+Geometry vs. Complex 3D Model</span></a><span lang=EN-GB style='font-family:
+"Calibri Light","sans-serif"'> </span></h2>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+basis for data collection for Hull Condition Asessement is the knowledge about
+the structure of the ship. This knowledge is used for:</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>a)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>specifying thickness
+measurement locations, </span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>b)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>locating plates and
+profiles during the measurement or survey and </span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>c)<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>associating
+measured thicknesses (and other findings) with plates and profiles in the
+report and assessment. </span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>This
+structural information is today contained in the steel drawings. In the event
+of a thickness measurement campaign, the company contracted to carry out the
+work obtains the steel drawings from the owner and prepares adequate versions
+of the drawings for the measurements. In case no steel drawings are available
+(this might be the case with old ships, which have changed the owner several
+times) sketches of the measured structural members are elaborated from scratch.
+This is typically done by the Thickness Measurements (TM) firm.</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Today,
+the measured thicknesses together with sketches are sufficient information for
+the later steps in the assessment. Therefore, the fundamental question in the
+design of a data model for HCMA is: “how can this information be organised so
+that: </span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>not
+more information than today needs to be entered,</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>data
+acquired once, needs to be entered only once, and</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>maximal
+computer support for the assessment phase (visualization and longitudinal
+strength) could be given?”</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>In
+TM sketches, only the information which is relevant for identifying the plates
+and profiles in the real ship is required (welding seams defining the shape and
+position of individual plates, original thickness of the plates, type and position
+of profiles), see e.g. </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure 2&#8209;1</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>In contrast to an
+analysis model of the ship, a data model for HCMA needs no topological
+information (i.e. connectivity of plates) and only low precision with respect
+to the exact location of plate boundaries is required. In particular, gaps or
+overlaps between adjacent plates in the model pose no problem, as long as it is
+possible for the TM staff to identify the particular plate in the real ship. In
+this way, only a simplified 3D model needs to be built up and stored. Its
+complexity must be tailored to the measurement process. </span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;text-align:center;
+page-break-after:avoid'><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><img
+width=533 height=255 src="OpenHCMdescription_fichiers/image001.jpg"></span></p>
+
+<p class=IccasFigure align=center style='margin-left:0cm;text-align:center;
+text-indent:0cm'><a name="_Toc285539303"></a><a name="_Ref104349735"><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Calibri Light","sans-serif";
+font-style:normal'>Figure </span></a><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Calibri Light","sans-serif";
+font-style:normal'>2</span><span lang=EN-GB style='font-size:12.0pt;font-family:
+"Calibri Light","sans-serif";font-style:normal'>&#8209;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Calibri Light","sans-serif";
+font-style:normal'>1</span><span lang=EN-GB style='font-size:12.0pt;font-family:
+"Calibri Light","sans-serif";font-style:normal'>: Shell expansion sketch for TM
+purposes</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>.</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>At
+present, the tabular representation of the data is typically prepared in the
+office after the measurement campaign, while preparing the TM report. Depending
+on the size of the vessel and the scope of the measurements, this procedure may
+take up to several weeks. At this stage the matching between the sketch and the
+table is established. This is usually realised by numbering the measurements
+and using numbers/names or any other kind of denominations for plates and
+profiles.</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>When
+analysing the thickness measurements, the scantling requirements of the classification
+rules (corrosion diminutions) are checked for the individual plates and
+profiles. In the future, this task will be supported by a visualisation of the
+corroded state of the vessel.</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>For
+oil tankers and in some cases for other ship types (approx. 5% according to the
+experience of Germanischer Lloyd) the analysis is extended to longitudinal
+strength calculations using the measured hull condition, see </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure 2&#8209;2</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>. For this purpose,
+the current thickness of plates and profiles must be input into a calculation
+system (such as POSEIDON or VeriSTAR-Hull), which is usually based on a more
+complex 3D representation of the steel structure. Today the measurements have
+to be entered manually into such a program and an engineer might require up to
+several weeks to achieve this task. Too long, considering the relatively short
+time the vessel is in the dock. </span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Although
+current TM reports might be available electronically (e.g. as Excel sheets),
+there is no functional support for the analysis. An additional problem comes
+from the fact that different naming conventions for plates and profiles may be
+used in these tables for the same vessel depending on the company in charge of
+the measurements.</span></p>
+
+<p class=IccasBody><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>It
+is expected, that significant improvements can be achieved for the HCMA process
+using a simplified electronic model of the ship and the measurements as
+described above. In particular, faster assessment through visualisation and
+longitudinal strength calculation will become possible.</span></p>
+
+<p class=IccasBody align=center style='text-align:center;page-break-after:avoid'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><img width=521
+height=304 src="OpenHCMdescription_fichiers/image002.gif"></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:18.0pt;text-align:center'><a
+name="_Toc285539304"></a><a name="_Ref104350766"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>Figure </span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&#8209;</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>: Simplified
+Geometry vs. complex 3D model in the TM process</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>Nevertheless, the key value of
+OpenHCM is the flexibility to represent the different aspects of the data
+involved in various stages of the process as well as the definition of a formal
+and well described interface to support different type of information like:</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>general
+data about the ship and the measurement campaign,</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>measurements
+data,</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>simplified
+geometrical information of the measured/surveyed structural components</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>identification
+of replacements of plates or profiles, </span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+12.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Reference
+to survey report items (to be done),</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>OpenHCM enables the storage of
+thickness <span style='layout-grid-mode:line'>measurement</span> data without
+an existing 3D-model of the ship. The measurement points will then be
+associated with an explicit location on the ship using absolute positions and
+additional attributes to facilitate the assignment to the respective structural
+component.</span></p>
+
+<h2><a name="_Toc285539221"><span style='font-family:"Calibri Light","sans-serif"'>2.2
+</span><span style='font-family:"Calibri Light","sans-serif"'>Top level
+structure of OpenHCM</span></a></h2>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>OpenHCM is divided in the following
+modules.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:35.7pt;text-align:justify;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span style='font-family:"Calibri Light","sans-serif"'>h</span></i><i><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>cm-pdt - Generic
+Product Data</span></i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:
+It defines data constructs for common used information about a product during
+its life cycle. This concerns general product data, which is not shipbuilding
+specific.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:35.7pt;text-align:justify;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>hcm-sdt
+- Generic Ship Data</span></i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:
+It defines the shipbuilding specific data constructs for describing the
+structural elements (plates and profiles), including a simplified geometry
+representation, frame spacing tables and other general vessel information of
+interest (e.g. main dimensions, class information, etc.). </span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:35.7pt;text-align:justify;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>hcm-core
+- Thickness Measurements Data</span></i><span lang=EN-GB style='font-family:
+"Calibri Light","sans-serif"'>: It defines the data constructs for representing
+all the data collected during a measurement campaign. It includes constructs
+for different kinds of measurements (plate strake based measurements, cross
+section based measurements, measurements on profiles, etc.) and their
+relationship to the corresponding structural elements. Data about the
+measurement campaign (date / company / …) is also included.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:35.7pt;text-align:justify;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>hcm-model-
+OpenHCM Model</span></i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:
+It defines the structure of the Hull Condition Model containing the information
+sets required to transport the condition of the vessel after being determined
+by survey, measurement  or repair activity (campaign).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:35.7pt;text-align:justify;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>hcm</span></i><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>: The top level
+schema which used for the purpose of defining a namespace. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure 2&#8209;3</span><span
+style='font-family:"Calibri Light","sans-serif"'> shows the different modules
+of OpenHCM and their relationships expressed as an UML Package Diagram.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>All
+tools being developed during the CAS project (interfaces to Classification
+Software, geometry and measurement input modules, visualisation module,
+condition assessment and risk based analysis tools) were based on OpenHCM.</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center;
+page-break-after:avoid'><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><img
+width=321 height=469 src="OpenHCMdescription_fichiers/image003.gif"></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><a
+name="_Toc285539305"></a><a name="_Ref104350937"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>Figure </span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&#8209;</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>3</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> </span><span
+lang=PT style='font-family:"Calibri Light","sans-serif"'>OpenHCM modules as UML
+package diagram</span></p>
+
+<h1><a name="_Toc285539222"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Technology Background</span></a></h1>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>For the implementation of the
+data model, the “Extensible Mark-up Language” (XML) has been chosen as the
+basic technology. The Extensible Mark-up Language (XML) represents a
+wide-spread technology for structuring documents and any kind of data that needs
+to be transmitted, stored or presented to users. An XML Schema approach is used
+to define the structure of OpenHCM. As a modern and robust approach for
+structuring data, XML provides mechanisms for creating, storing and exchanging
+complex organised data by and between software applications and systems with or
+without human interaction. XML enables the combination of data contents and
+meaning of the data through its &quot;mark-up&quot; approach. At the same time
+it supports the strict separation of data and its presentation, which plays an
+important role in the design and development of technical software, making
+possible to provide different views from the same source data. </span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>Being derived from SGML
+(Standard Generalized Mark-up Language, ISO 8879), XML was initially designed
+and used for structuring electronic documents for the web. However, due to its
+extensibility and wide availability it rapidly became the favorite technology
+of software developers for defining industry specific data formats, so called
+&quot;XML vocabularies&quot;. In fact, XML is not only connected to the XML
+specification 1.0 published by the World Wide Web consortium (W3C), Bray T. el
+al. , it is to be understood as a family of related and mutually complementing
+technologies, which extend the utilisation of XML to many business areas,
+including the storage, exchange and manipulation of complex technical data.</span></p>
+
+<h2><a name="_Toc285539223"><span style='font-family:"Calibri Light","sans-serif"'>3.1
+</span><span style='font-family:"Calibri Light","sans-serif"'>Document-Centric
+vs. Data-Centric</span></a></h2>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>XML technology is being
+implemented and used for a wide variety of purposes in different domains of
+business and industry. Depending on the context for which XML is used, XML
+formatted documents can be categorized into two major groups: Document-centric
+and Data-centric.</span></p>
+
+<h2><a name="_Toc285539224"><span style='font-family:"Calibri Light","sans-serif"'>3.2
+</span><span style='font-family:"Calibri Light","sans-serif"'>XML Schema</span></a></h2>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify'><span
+style='font-family:"Calibri Light","sans-serif"'>The structure of the Hull
+Condition Model is defined in the XML Schema Definition Language (XSDL) as
+specified by the World Wide Web Consortium. XSDL was chosen due to the advantages
+that it provides in comparison to Document Type Definitions. </span></p>
+
+<h1><a name="_Toc285539225"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Scope</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> </span></h1>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+purpose of OpenHCM is to provide data exchange support in all phases of the
+HCMA process. </span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Following
+aspects are within the scope of OpenHCM:</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>General
+information about the measured ship</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Information
+about measured structural elements</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>General
+information about the measurement campaign</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Information
+about the individual plates and profiles</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Simplified
+geometry description of plates and profiles</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Information
+about the individual measurements (position, value, plate)</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>References
+to external files such as photographs, documents, and spoken comments</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Following
+aspects are outside the scope of OpenHCM and must be provided by the
+corresponding application using the data contained in a OpenHCM instance file</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Results
+of Data Analysis</span></p>
+
+<p class=CAPBULLETCharChar style='margin-top:0cm;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:35.7pt;text-indent:-17.85pt'><span lang=EN-GB
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Data
+used for the visual representation of the measurements (attributes like color
+and line thickness, symbols, etc.)</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> </span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<h1><a name="_Toc285539226"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Architecture of OpenHCM</span></a></h1>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+OpenHCM has been developed in five steps</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>identification of
+the requirements through a process analysis,</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>process modelling
+with focus on the data exchange between sub-processes,</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>a textual data
+description,</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>design of the data
+model, and</span></p>
+
+<p class=MsoBodyText style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>refinement of the
+data model during software implementation and testing/validation.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Steps
+(1) to (3) are documented in deliverable D-1-2-1 &quot;<i>Report on Business
+Process Analysis and User Requirements</i>&quot; </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[13]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>. The results of
+step (4) are described in the present document.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>HCM
+is based on the W3C XML Schema Definition Language (WSDL). However, since the the
+<i>Object Oriented Paradigm</i> is adopted, a preliminary data modelling is
+implemented by means of the graphical approach provided by Class Diagrams of
+the Unified Modelling Language (UML) </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[7]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>.</span></p>
+
+<h2><a name="_Toc285539227"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5.1
+</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>XML
+Schema Design</span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>
+</span></h2>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Following
+the &quot;venetian blind&quot; XML Schema design pattern, Costello R.</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[8]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> and McBeath D. et
+al </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[10]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>, most OpenHCM
+modules contain, at the global schema document level, only definitions of
+element types. In the whole data model, only one global element definition is
+contained, avoiding ambiguity for the root element and supporting
+extensibility.</span></p>
+
+<p class=MsoBodyText><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure 5&#8209;1</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> on next page shows
+a graphical representation of OpenHCM as simple Unified Modelling Language
+(UML) class diagram, showing the relationships between different data
+constructs.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+following aspects of XML Schema design have been taken into consideration:</span></p>
+
+<p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Modularisation</span></u><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>: The Data model is
+built up of several XML Schema Documents, which are interconnected by means of
+the <i>include</i> and<i> import</i> features of WSDL.</span></p>
+
+<p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Design
+Patterns</span></u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:
+the <i>Venetian Blind</i> design pattern </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[8]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> is followed in
+order to achieve best extensibility of the data model, i.e. all globally
+declared data constructs are defined as simple or complex types. Only the data
+construct, which will become the root element in the instance documents, is
+declared globally as an element. In fact, most of the implemented schema
+documents cannot be instantiated, since they contain only data types to be used
+by other modules.</span></p>
+
+<p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Extensibility</span></u><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+chosen XML Schema approach for data modelling provides adequate mechanisms to
+make the model extensible. </span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=588
+ style='width:441.0pt;margin-left:14.4pt;border-collapse:collapse'>
+ <tr style='page-break-inside:avoid;height:2.0cm'>
+  <td width=588 valign=top style='width:441.0pt;padding:0cm 5.4pt 0cm 5.4pt;
+  height:2.0cm'>
+  <p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><img
+  width=1424 height=609 src="OpenHCMdescription_fichiers/image004.gif"></span></u></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><span
+ style='text-decoration:none'>&nbsp;</span></span></u></p>
+
+<p class=MsoCaption style='text-align:justify'><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>Figure </span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&#8209;</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>1</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> OpenHCM Data
+Constructs as simple UML Class Diagram</span></p>
+
+<u><span lang=EN-GB style='font-size:12.0pt;font-family:"Calibri Light","sans-serif"'><br
+clear=all style='page-break-before:always'>
+</span></u>
+
+<p class=MsoBodyText><u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Development
+Guidelines</span></u><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>:</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>To
+ensure that deployment of OpenHCM by software developers does not lead to a
+misuse of technical possibilities provided by the XML schema technology, a set
+of guidelines for XML developers have been formulated. Important aspects like
+the extension of OpenHCM with own data constructs are covered by these
+Guidelines.</span></p>
+
+<h2><a name="_Toc285539228"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5.2
+</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Design
+Objectives</span></a></h2>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+main objective of OpenHCM is to provide support for the HCMA process. One of
+the major aspects in the development of the data model – due to the huge amount
+of data being currently processed by hand – is the support for thickness
+measurement procedures as required by international regulations and applicable
+rules of classification societies. Following the approach described in </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[9]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>  for the
+identification of design objectives of XML Schemas, OpenHCM has been designed to
+be:</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Simple: It supports
+the current procedure of thickness measurements, i.e. the information in a measurement
+file (instance document) is similar to the content (not to the format) of IACS
+tables combined with sketches as used today.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Flexible: It is possible
+to use the data model even if no structural model (e.g. in classification
+software) is available beforehand.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Descriptive: It
+enables easy visualization of the measurement results.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Unambiguous: In
+case a structural model exists, matching of thickness measurements to elements
+in the structural model is supported.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Independent: measurement
+files can be processed by different applications implemented by different
+parties.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Compatible: Compatibility
+with current working procedures is provided. In particular, generation of IACS
+tables for reporting TM is possible. Nevertheless, the structure of the data
+model is independent of the organisation of the data in the IACS tables.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Self-contained: One
+file contains all data from one measurement campaign. The data model does not depend
+on external XML schemas.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Compact: Measurement
+files are reasonably small (e.g. by avoiding long names for elements and
+attributes).</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Extensible:
+Software developers are empowered to extend the data model as required for
+specific purposes.</span></p>
+
+<p class=IccasBody style='margin-left:36.0pt;text-indent:-18.0pt'><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>10.<span
+style='font:7.0pt "Times New Roman"'>&nbsp; </span></span><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>Open: OpenHCM (not the
+measurement data, but the data model) is freely available to all parties
+interested in developing software supporting Hull Condition Monitoring and
+Assessment (e.g. Classification Societies or software vendors). No proprietary
+data of any party's software system is included in the data model.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<h1><a name="_Toc285539229"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>OpenHCM
+Specification (normative)</span></a></h1>
+
+<h2><a name="_Toc285539230"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6.1
+</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>General
+Considerations</span></a></h2>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+OpenHCM specification is based on XML Schema Definition Language (XSDL) </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[1]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>, </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[2]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>, </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[3]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> and </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[4]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>. The following design
+criteria have been used throughout all schema documents.</span></p>
+
+<h3><a name="_Toc285539231"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6.1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Naming
+conventions</span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>
+</span></h3>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>For
+names of Complex Types and Elements the Upper Camel Case (UCC) rule is used,
+i.e. only the first letter of the name is uppercase and in composed names every
+individual name starts with upper case in one single word; for instance: <i>ShipData</i></span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>For
+names of Attributes and Simple Types, the Lower Camel Case (LCC) rule is used;
+i.e. similar to the UCC rule, but the first letter is in lower case.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Word
+separation by means of any other symbol (dash &quot;-&quot;, underline
+&quot;_&quot;, dot &quot;.&quot;, etc.) is prohibited.   </span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Use
+of plural form is reserved for constructs denoting a group or set of elements,
+for instance: <i>ThicknessMeasurements</i></span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Abbreviations
+should not be used. However, widely accepted acronyms may be used as part of
+composed names. Acronyms should be always in upper case. The UCC and LCC
+conventions mentioned above for element and type names and for attribute names
+respectively must be observed.</span></p>
+
+<h3><a name="_Toc285539232"><span lang=EN-GB style='font-size:11.0pt;
+font-family:"Calibri Light","sans-serif"'>6.1.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Namespace</span></a></h3>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+OpenHCM namespace is temporarily defined by <span style='color:black;
+background:white'>http://www.hcm.org/XML/1.0/hcm</span>. The name space URI (unified
+resource identifier, </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>[11]</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>) may be changed once
+OpenHCM is accepted as an IACS standard. Version handling is thus supported in
+the namespace and 1.0 is the first official version.</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+individual schema documents do not define a default namespace. However, the
+schema document hcm.xsd is used to define the above mentioned URI as default
+namespace of the data model.</span></p>
+
+<h3><a name="_Toc285539233"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6.1.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Physical
+Units</span></a></h3>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>All
+quantities are stored in SI units (m, kg, s, K or combinations thereof).</span></p>
+
+<h3><a name="_Toc285539234"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6.1.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Global
+Ship Coordinate System</span></a></h3>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>The
+origin of the global ship coordinate system is situated at frame 0 (rudder
+axis), centreline and basis line respectively. The positive x-axis goes in
+forward direction, the positive y-axis goes on the port side and the positive
+z-axis goes upwards. In </span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure 6&#8209;1</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> the global
+coordinate is shown.</span></p>
+
+<p class=MsoBodyText align=center style='text-align:center;page-break-after:
+avoid'><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'><img
+width=445 height=303 src="OpenHCMdescription_fichiers/image005.gif"></span></p>
+
+<p class=MsoCaption align=center style='text-align:center'><a
+name="_Toc285539307"></a><a name="_Ref169679844"></a><a name="_Ref169679919"><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Figure </span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>6</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&#8209;</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>1</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>: Global Ship
+Coordinate System</span></p>
+
+<p class=MsoBodyText><a name="_Toc117353341"></a><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<p class=MsoBodyText><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>&nbsp;</span></p>
+
+<h1><a name="_Toc285539298"><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>7<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>References</span></a></h1>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96333996">[1]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Fallside
+D., Walm</span></a><span style='font-family:"Calibri Light","sans-serif"'>sley
+P., <i>XML Schema Part 0: Primer Second Edition, W3C Recommendation 28 October
+2004, </i></span><a href="http://www.w3.org/TR/xmlschema-0"><i><span
+style='font-family:"Calibri Light","sans-serif"'>http://www.w3.org/TR/xmlschema-0</span></i></a><i><span
+lang=FR style='font-family:"Calibri Light","sans-serif"'> </span></i></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96333971"><span lang=FR>[2]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=FR style='font-family:"Calibri Light","sans-serif"'>Thompson
+H. et al, <i>XML Schema Part 1: Structures Second Edition, W3C Recommendation
+28 October 2004, </i></span></a><a href="http://www.w3.org/TR/xmlschema-1"><i><span
+lang=FR style='font-family:"Calibri Light","sans-serif"'>http://www.w3.org/TR/xmlschema-1</span></i></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96333973"><span
+lang=EN-GB>[3]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Biron
+P. et al, <i>XML Schema Part 2: Datatypes Second Edition, W3C Recommendation </i></span></a><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>28 October 2004</span></i><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>, </span><a
+href="http://www.w3.org/TR/xmlschema-2"><span lang=EN-GB style='font-family:
+"Calibri Light","sans-serif"'>http://www.w3.org/TR/xmlschema-2</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref113688507"><span
+lang=EN-GB>[4]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Walmsley
+P., <i>Definitive XML Schema</i>, Prentice Hall Inc., 2002.</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[5]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Bray
+T. et al., <i>Extensible Markup Language (XML) 1.0 (Third Edition)</i>, W3C
+Recommendation 04 February 2004, http://www.w3.org/TR/2004/REC-xml-20040204/ </span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96333383"><span lang=ES>[6]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=ES-VE style='font-family:"Calibri Light","sans-serif"'>Gonzalez
+E., Mendicoa</span></a><span lang=ES style='font-family:"Calibri Light","sans-serif"'>
+T.,</span><span lang=ES style='font-family:"Calibri Light","sans-serif"'> </span><i><span
+lang=ES style='font-family:"Calibri Light","sans-serif"'>XML y sus
+Co-Estándares, la Revolución del e-business</span></i><span lang=ES
+style='font-family:"Calibri Light","sans-serif"'>,  </span><a
+href="http://www.xml.com.ve/xmlcoestandares.ppt"><span lang=ES
+style='font-family:"Calibri Light","sans-serif"'>http://www.xml.com.ve/xmlcoestandares.ppt</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96917372"><span
+lang=EN-GB>[7]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Booch,
+G. et al, <i>The Unified Modelling Language</i>, Addison-Wesley, 1999.</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96918432"><span
+lang=EN-GB>[8]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Costello
+R. et al, </span></a><i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>XML
+Schemas: Best Practices</span></i><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>,
+compilation of contributions of the xml-dev discussion list,  </span><a
+href="http://www.xfront.com/BestPracticesHomepage.html"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>http://www.xfront.com/BestPracticesHomepage.html</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref96918909"><span
+lang=EN-GB>[9]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Costello</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> R., <i>Identifying
+XML Schema Design Objectives</i>, 2003, </span><a
+href="http://www.xfront.com/DesignObjectives.html"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>http://www.xfront.com/DesignObjectives.html</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> </span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref117409112"><span
+lang=EN-GB>[10]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>McBeath
+D. et al., MedBiquitous XML Schema Design Guidelines, version 1.2, </span></a><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>30 April 2004</span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>.</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref113870841"><span
+lang=EN-GB>[11]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>RFQ
+3986, Uniform Resource Identifier (URI): Generic Syntax, January 2005 </span></a><a
+href="http://www.gbiv.com/protocols/uri/rfc/rfc3986.html"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>http://www.gbiv.com/protocols/uri/rfc/rfc3986.html</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> (last visited
+2005-09-07)</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[12]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Jaramillo D., Cabos
+C., Renard P., <i>Efficient Data Management for Hull Condition Assessment</i>,
+12th International Conference on Computer Applications in Shipbuilding ICCAS
+2005, 23-26 August 2005, Busan, Korea.</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref174757890"><span
+lang=EN-GB>[13]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Jaramillo
+D., Mikelis N., Cartaxo A., Routisseau L., Moerland P., Renard P., CAS
+Deliverable D-1-2-1: <i>Report on Business Process Analysis and User
+Requirements, </i>March 2006.</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref113696124"></a><a
+name="_Ref113781741"><span lang=EN-GB>[14]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>IACS
+Procedural Requirements No. 11, IACS Procedure for Assigning Date of Build,
+1996</span></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[15]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>IMO Ship
+Identification Numbering Scheme at Lloyd's register- Fairplay's web site: </span><a
+href="http://imonumbers.lrfairplay.com/ships.aspx"><span lang=EN-GB
+style='font-family:"Calibri Light","sans-serif"'>http://imonumbers.lrfairplay.com/ships.aspx</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>  (last visited
+2005-09-05)</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><a name="_Ref113696445"><span
+lang=EN-GB>[16]<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>Information
+on IMO ship identification number scheme on the web site of the IMO: </span></a><a
+href="http://www.imo.org/Facilitation/mainframe.asp?topic_id=388"><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>http://www.imo.org/Facilitation/mainframe.asp?topic_id=388</span></a><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'> (last visited:
+2005-09-05)</span><a name="_Ref113871414"></a></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[17]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>ISO/FDIS
+10303-42:2004(E), Industrial automation systems and integration — Product data
+representation and exchange, Part 42: Integrated generic resource: Geometric
+and topological representation, 2003.</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[18]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>ISO/CD 10303-218 - Product
+Data Representation and Exchange: Application Protocol: Ship Structures. ISO TC
+184/SC4/WG 3 N877, 2001-03-23.</span></p>
+
+<p class=Reference style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:26.95pt;text-indent:-26.95pt'><span lang=EN-GB>[19]<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-family:"Calibri Light","sans-serif"'>ISO/IS 10303-215,
+Industrial automation systems and integration, Product data representation and
+exchange Part 215: Application protocol: Ship arrangement, ISO TC 184/SC4/WG3
+N1226, 2003-12-14.</span></p>
+
+</div>
+
+<div><br clear=all>
+
+<hr align=left size=1 width="33%">
+
+<div id=ftn1>
+
+<p class=MsoFootnoteText><a href="#_ftnref1" name="_ftn1" title=""><span
+class=MsoFootnoteReference><span lang=EN-GB><span class=MsoFootnoteReference><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Times New Roman","serif"'>[1]</span></span></span></span></a><span
+lang=EN-GB> </span><i>Enhanced Survey Programme</i> - ESP (Resolution A.744(18)
+as amended) <i>Condition Assessment Scheme</i> - CAS (IMO MEPC.94(46)), and
+IACS Unified Requirements (UR Z7.1 Z10 and Z11).</p>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
