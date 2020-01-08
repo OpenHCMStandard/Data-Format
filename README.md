@@ -9,7 +9,6 @@ It is a set of XSD files. Access is [here][xsdFiles].
 > An online viewer supporting the last format is available on this [web page][viewer].
 
 
-
 [dataformat]: <https://openhcmstandard.github.io/Data-Format/>
 [viewer]: <https://openhcmstandard.github.io/OpenHCMViewer/>
-[xsdFiles]: <https://openhcmstandard.github.io/Data-Format/OpenHCM-Files/>
+[xsdFiles]: <https://github.com/OpenHCMStandard/Data-Format/blob/master/OpenHCM-Files>
