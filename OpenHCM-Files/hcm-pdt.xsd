@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" blockDefault="#all" version="2.0">
+	<xs:annotation>
+		<xs:documentation>This Schema defines basic data constructs to represent geometric and non geometric characteristics of a product during its life cycle. Following constructs are defined in this
+			schema.</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="CartesianPoint">
+		<xs:annotation>
+			<xs:documentation source="ISO-10303-42/Section_4.4.4"><![CDATA[
+	  <p>
+	    A point defined by its coordinates in a rectangular
+	    Cartesian coordinate system, or in a parameter space. The
+	    entity is defined in a two or three-dimensional space as
+	    determined by the number of coordinates in the list.
+	  </p>
+	  <p>
+	    <b>Note 1:</b>For the purposes of defining geometry in HCM
+	    only two or three-dimensional points are used.
+	  </p>]]>
+			</xs:documentation>
+			<xs:documentation source="ISO-10303-42/Section_4.4.4">
+				<p>A point defined by its coordinates in a rectangular Cartesian coordinate system, or in a parameter space. The entity is defined in a two or three-dimensional space as determined by the number
+					of coordinates in the list.</p>
+				<p>
+					<b>Note 1:</b>For the purposes of defining geometry in HCM only two or three-dimensional points are used.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="x" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>First coordinate of the point.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="y" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>Second coordinate of the point.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="z" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>Third coordinate of the point.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Polyline">
+		<xs:annotation>
+			<xs:documentation source="ISO-10303-42/Section_4.4.33" xml:lang="EN">
+				<p>A curve composed of n-1 line segments defined by n points. If the first and last point are identical, the curve is closed.</p>
+				<p>The complex type
+					<code>Polyline</code>contains one attribute (see below) and two or more child elements
+					<code>Vertex</code>of type
+					<code>CartesianPoint</code>representing the vertices of the
+					<code>Polyline</code>.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Vertex" type="CartesianPoint" minOccurs="2" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="closed" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>It represents a flag providing information, whether the corresponding Polyline is geometrically closed or not (i.e. the first and last vertex are connected by a Polyline
+					segment)</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Polyline2D">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				<p>A Polyline in 2D space consisting of a set of linearly connected vertices.</p>
+				<p>The
+					<code>Vertex</code>child element is implicitly derived by restriction from the complex type
+					<code>CartesianPoint</code>by omitting the attribute
+					<em>z</em>.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Vertex" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:restriction base="CartesianPoint">
+							<xs:attribute name="z" type="xs:double" use="prohibited"/>
+						</xs:restriction>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="closed" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="Direction">
+		<xs:annotation>
+			<xs:documentation source="ISO-10303-42/Section_4.4.14" xml:lang="en">This entity defines a general direction vector in two or three dimensional space. The actual magnitudes of the components have no effect upon the direction being defined, only the ratios
+				<em>i:j:k</em>or
+				<em>i:j</em>are significant.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="i" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>The first component of the vector.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="j" type="xs:double" use="required">
+			<xs:annotation>
+				<xs:documentation>The second component of the vector.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="k" type="xs:double">
+			<xs:annotation>
+				<xs:documentation>The third component of the vector.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="BoundingBox">
+		<xs:annotation>
+			<xs:documentation xml:lang="en"><![CDATA[<html>
+	A <code>BoundingBox</code> is a cuboid in space containing an
+	object in 3D space completely. It is defined by min and max
+	value for <em>x</em>, <em>y</em>, and <em>z</em> values of the
+	bounding box. The edges of the cube are parallel to the
+	coordinate axes.</html>]]>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="xmin" type="xs:double" use="required"/>
+		<xs:attribute name="xmax" type="xs:double" use="required"/>
+		<xs:attribute name="ymin" type="xs:double" use="required"/>
+		<xs:attribute name="ymax" type="xs:double" use="required"/>
+		<xs:attribute name="zmin" type="xs:double" use="required"/>
+		<xs:attribute name="zmax" type="xs:double" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="MeshVertex">
+		<xs:annotation>
+			<xs:documentation>A vertex of a mesh. It is recommended to use unique identifiers within a model.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="CartesianPoint">
+				<xs:attribute name="id" type="xs:int" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MeshTriangle">
+		<xs:annotation>
+			<xs:documentation>A mesh triangle defined by 3 vertices.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="vertex1" type="xs:int" use="required"/>
+		<xs:attribute name="vertex2" type="xs:int" use="required"/>
+		<xs:attribute name="vertex3" type="xs:int" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Mesh">
+		<xs:sequence>
+			<xs:annotation>
+				<xs:documentation>A mesh: a set of vertices and a set of triangles. There are no additional assumption about the mesh. If a mesh exists for at least one plate (or subplate) all other plates and sub plates should have a mesh as well. In this case a mesh shall be provided for planar and non-planar plates.</xs:documentation>
+			</xs:annotation>
+			<xs:element name="Vertices">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Vertex" type="MeshVertex" minOccurs="3" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Triangles">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Triangle" type="MeshTriangle" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Certificate">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				<p>A
+					<code>Certificate</code>is a document issued by an authority body on fulfillment of specific requirements.</p>
+				<p>This is a generic construct which can be used for different types of certificates or extended as adequate.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Attachments" type="DocumentReferences" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Certificates of a thickness measurement company and/or individual employees involved in a measurement session or campaign. Typical formats are .jpg,
+						.tiff, .bmp, .png, .pdf.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+		<xs:attribute name="number" type="xs:string" use="required"/>
+		<xs:attribute name="issuedBy" type="classSociety" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of the organization or institution who issued the document.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="issuedByCommonName" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>The common name of the issuing company. Only to be specified when
+					<code>@society = 'OTHER'</code>
+				</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="issuedOn" type="xs:date" use="required">
+			<xs:annotation>
+				<xs:documentation>The date of issue.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="expires" type="xs:date" use="required">
+			<xs:annotation>
+				<xs:documentation>The date until which the document will be valid.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ExternalDocument">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Represents any kind of external resources to be linked to the hull condition information of the ship such us photographs, text documents, drawings, etc.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="id" type="globalId" use="required">
+			<xs:annotation>
+				<xs:documentation>Unique identifier within the XML document.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="path" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Specifies the location of the external document in form of an URI.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="contentType">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">
+					<p>The content type denotes the type of content of the external document as defined by MIME standard. MIME (Multipurpose Internet Mail Extensions) is an Internet standard for describes message
+						content types.</p>
+					<p>MIME messages can contain text, images, audio, video, and other application-specific data.</p>
+					<p>Official MIME info is provided by the Internet Engineering Task Force (IETF) in the following documents:
+						<ul>
+							<li>RFC-822 Standard for ARPA Internet text messages</li>
+							<li>RFC-2045 MIME Part 1: Format of Internet Message Bodies</li>
+							<li>RFC-2046 MIME Part 2: Media Types</li>
+							<li>RFC-2047 MIME Part 3: Header Extensions for Non-ASCII Text</li>
+							<li>RFC-2048 MIME Part 4: Registration Procedures</li>
+							<li>RFC-2049 MIME Part 5: Conformance Criteria and Examples</li>
+						</ul>
+					</p>
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\w+/\w+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="title" type="xs:string"/>
+		<xs:attribute name="description" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>A descriptive text to provide additional information about the referenced document.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="DocumentList">
+		<xs:annotation>
+			<xs:documentation>A list of external documents.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Document" type="ExternalDocument" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DocumentReferences">
+		<xs:annotation>
+			<xs:documentation>List of document references associated with the current element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DocumentReference" type="DocumentReference" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DocumentReference">
+		<xs:annotation>
+			<xs:documentation>Defines a reference to an
+				<code>ExternalDocument</code>element.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Position" type="CartesianPoint" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="refId" type="globalId" use="required">
+			<xs:annotation>
+				<xs:documentation>Reference to an
+					<code>ExternalDocument</code>id.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="orientation" type="orientationType">
+			<xs:annotation>
+				<xs:documentation>Direction to use when printing the referenced document.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="caption" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="TimeSpan">
+		<xs:annotation>
+			<xs:documentation>Represents an extent in time bounded by
+				<code>start</code>and
+				<code>end</code>dateTimes. If
+				<code>start</code>or
+				<code>end</code>is missing, then that end of the period is unbounded.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="start" type="xs:date"/>
+		<xs:attribute name="end" type="xs:date"/>
+	</xs:complexType>
+	<xs:simpleType name="globalId">
+		<xs:annotation>
+			<xs:documentation xml:lang="EN">
+				<p>A global identifier is unique within the file, not necessarily across files. It is composed of upper case and lower case letters as well as numbers. It shall not contain any whitespace.
+					Different parts may be separated by colon.</p>
+				<p>It is based on the XML Schema simple type
+					<code>xs:token</code>.</p>
+				<p>
+					<b>Remark:</b>The reason why the XML Schema type
+					<code>xs:ID</code>is not used for this purpose is that
+					<code>xs:ID</code>is bound to many restrictions with respect to the characters that are allowed to be used. Using
+					<code>xs:token</code>as basic type allows for more flexibility with respect to the use of Unicode characters and white spaces.</p>
+				<p>The uniqueness property of an attribute or element of type
+					<code>globalId</code>can be achieved by means of so called identity constraints, which is a feature of the XML Schema specification.</p>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:pattern value="[0-9a-zA-Z_\-:.@]+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Company">
+		<xs:annotation>
+			<xs:documentation>Company information.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Company name</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="contactDetails"/>
+	</xs:complexType>
+	<xs:complexType name="Person">
+		<xs:annotation>
+			<xs:documentation>Information to a Person.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="title" type="xs:string"/>
+		<xs:attribute name="qualification" type="xs:string"/>
+		<xs:attributeGroup ref="contactDetails"/>
+	</xs:complexType>
+	<xs:complexType name="Customer">
+		<xs:annotation>
+			<xs:documentation>List of
+				<code>Company</code>and
+				<code>Person</code>entries.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Company" type="Company" minOccurs="0"/>
+			<xs:element name="Contact" type="Person" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:attributeGroup name="contactDetails">
+		<xs:annotation>
+			<xs:documentation>Detailed information accrding a contact (
+				<code>Company</code>or
+				<code>Person</code>).</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="address" type="xs:string"/>
+		<xs:attribute name="city" type="xs:string"/>
+		<xs:attribute name="zip" type="xs:string"/>
+		<xs:attribute name="country" type="xs:string"/>
+		<xs:attribute name="phone" type="xs:string"/>
+		<xs:attribute name="fax" type="xs:string"/>
+		<xs:attribute name="email" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:complexType name="Survey">
+		<xs:annotation>
+			<xs:documentation>Information on surveys documented in the file.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="type" type="surveyType">
+			<xs:annotation>
+				<xs:documentation>Character of current survey.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="due" type="xs:date">
+			<xs:annotation>
+				<xs:documentation>Due date of next survey.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="surveyType">
+		<xs:annotation>
+			<xs:documentation>Character of survey.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="class renewal"/>
+			<xs:enumeration value="annual"/>
+			<xs:enumeration value="intermediate"/>
+			<xs:enumeration value="cap"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="positiveValue">
+		<xs:annotation>
+			<xs:documentation xml:lang="EN">A numeric value that is greater than or equal to zero. It is used for measures which must be positive, e.g. the length of the ship.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="orientationType">
+		<xs:annotation>
+			<xs:documentation>Document orientation.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="portrait"/>
+			<xs:enumeration value="landscape"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IdList">
+		<xs:annotation>
+			<xs:documentation>A generic data construct representing of list of unique identifiers of type
+				<code>globaId</code>. The purpose of this construct is reusability of a common data block that can be used in other complex type definitions requiring referecing a group of elements.</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="globalId"/>
+	</xs:simpleType>
+	<xs:complexType name="CertifiedCompany">
+		<xs:annotation>
+			<xs:documentation>Infromation on company holding some kind or certification.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="Company">
+				<xs:sequence>
+					<xs:element name="Certificates">
+						<xs:annotation>
+							<xs:documentation>List of certificates assigned to the certified company.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Certificate" type="Certificate" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="classSociety">
+		<xs:annotation>
+			<xs:documentation>Abbreviations for the supported classification societies.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ABS"/>
+			<xs:enumeration value="BV"/>
+			<xs:enumeration value="CCS"/>
+			<xs:enumeration value="DNV"/>
+			<xs:enumeration value="GL"/>
+			<xs:enumeration value="KR"/>
+			<xs:enumeration value="LR"/>
+			<xs:enumeration value="NKK"/>
+			<xs:enumeration value="RINA"/>
+			<xs:enumeration value="RS"/>
+			<xs:enumeration value="OTHER"/>
+			<xs:enumeration value="IACS"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified" blockDefault="#all" version="2.0">
+	<xs:complexType name="HullConditionExtensions">
+		<xs:sequence>
+			<xs:element name="Extension" type="HullConditionExtension" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HullConditionExtension" abstract="true"/>
+</xs:schema>

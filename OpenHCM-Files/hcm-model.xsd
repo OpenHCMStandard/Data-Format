@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" blockDefault="#all" version="2.0">
+	<xs:include schemaLocation="hcm-pdt.xsd"/>
+	<xs:include schemaLocation="hcm-sdt.xsd"/>
+	<xs:include schemaLocation="hcm-core.xsd"/>
+	<xs:include schemaLocation="hcm-ext.xsd"/>
+	<xs:element name="HullCondition">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">An object describing the ship, its geometry and results of a measurement campaign.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ShipData" type="ShipData" minOccurs="0"/>
+				<xs:element name="HullStructure" type="ShipStructure" minOccurs="0"/>
+				<xs:element name="ThicknessMeasurementCampaign" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">A measurement campaign defines the overall scope of thickness measurements of the hull structure required in preparation of a CAP survey or a class survey. In particular, IACS URZ10 requires that "In any kind of survey, i.e. special, intermediate, annual or other surveys having the scope of the foregoing ones, thickness measurements of structures in areas where close-up surveys are required shall be carried out simultaneously with close-up surveys." Typically the results of a measurement campaign are reported to ship owner and classification society, who use them for the purpose of strength assessments as well as for repair planning.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ClassSurvey" type="Survey" minOccurs="0"/>
+							<xs:element name="ThicknessMeasurements" type="Gaugings" minOccurs="0"/>
+							<xs:element name="MeasurementGroups" type="MeasurementGroupType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">Measurement groups is a collection of all measurement tasks within a measurement campaign or measurement session.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="MeasurementSession" type="MeasurementSession" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="Attachments" type="DocumentReferences" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">Documents, drawings, photos describing the general state of the vessel, e.g. upon delivery. This includes general drawings such as general arrangement or tank plan. Typical formats are .jpg,
+										.tiff, .bmp, .png, .pdf. The following types of attachments may be included in this model:
+										<UL>
+											<li>photos documenting failures per compartment, often recorded with position, typical format is .jpg</li>
+											<li>sketches taken during measurements in order to document the position of individual measurement points, typical format (.jpg,.tiff,.bmp,.png,.pdf)</li>
+											<li>recorded gauging files, typical format (.utm) => MeasurementSession</li>
+											<li>personal or company certificates, typical format (.jpg,.tiff,.bmp,.png,.pdf)</li>
+										</UL>
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="reportCreated" type="xs:date"/>
+						<xs:attribute name="reportNumber" type="xs:string"/>
+						<xs:attribute name="id" type="globalId" use="required"/>
+						<xs:attribute name="status" type="statusType" use="required"/>
+						<xs:attribute name="comment" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Extensions" type="HullConditionExtensions" minOccurs="0"/>
+				<xs:element name="Documents" type="DocumentList" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="schemaVersion" type="xs:string" use="required"/>
+			<xs:attribute name="generator" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">The source from which the data set originates. This could be a system or dedicated interface. The data could also created manually. Include a version number if available. Example:
+						<code>POSEIDON, v1.50</code>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
